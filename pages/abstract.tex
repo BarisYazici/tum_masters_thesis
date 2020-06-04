@@ -1,0 +1,28 @@
+\chapter{\abstractname}
+
+%TODO: Abstract
+
+
+
+
+
+\makeatletter
+\ifthenelse{\pdf@strcmp{\languagename}{english}=0}
+{\renewcommand{\abstractname}{Kurzfassung}}
+{\renewcommand{\abstractname}{Abstract}}
+\makeatother
+
+\chapter{\abstractname}
+
+%TODO: Abstract in other language
+\begin{otherlanguage}{ngerman} % TODO: select other language, either ngerman or english !
+
+\end{otherlanguage}
+
+
+% Undo the name switch
+\makeatletter
+\ifthenelse{\pdf@strcmp{\languagename}{english}=0}
+{\renewcommand{\abstractname}{Abstract}}
+{\renewcommand{\abstractname}{Kurzfassung}}
+\makeatother
