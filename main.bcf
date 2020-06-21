@@ -2120,7 +2120,21 @@
     <bcf:datasource type="file" datatype="bibtex">bibliography.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">latex</bcf:citekey>
+    <bcf:citekey order="1">Kroemer201</bcf:citekey>
+    <bcf:citekey order="2">Kroemer201</bcf:citekey>
+    <bcf:citekey order="3">openai gym</bcf:citekey>
+    <bcf:citekey order="4">stable-baselines</bcf:citekey>
+    <bcf:citekey order="5">AnimalInt11</bcf:citekey>
+    <bcf:citekey order="6">Sutton2018</bcf:citekey>
+    <bcf:citekey order="7">Sutton2018</bcf:citekey>
+    <bcf:citekey order="8">Sutton2018</bcf:citekey>
+    <bcf:citekey order="9">PerezMIT</bcf:citekey>
+    <bcf:citekey order="10">Gagniuc2017</bcf:citekey>
+    <bcf:citekey order="11">Gagniuc2017</bcf:citekey>
+    <bcf:citekey order="12">Gagniuc2017</bcf:citekey>
+    <bcf:citekey order="13">Bellman1958</bcf:citekey>
+    <bcf:citekey order="14">Sutton</bcf:citekey>
+    <bcf:citekey order="15">Sutton</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="none/global/" type="entry" sortscheme="none" sortnamekeyscheme="global" labelprefix="">
   <bcf:sorting>

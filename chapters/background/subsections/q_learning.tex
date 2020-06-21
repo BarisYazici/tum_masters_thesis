@@ -1,0 +1,7 @@
+\subsection{Q-Learning}
+
+Q-learning algorithms have been the core of the RL research for almost 20 years. It combines the idea of TD learning in approximating action-value function. Through this approach, the computation converges faster than state-value approximation algorithms. Another strength of the Q-learning algorithm is its off-policy nature. The Q-learning agent can learn from the results of different policies. Off-policy nature makes the agent more data-efficient. An agent is not obliged to learn from the outcome of one policy; instead, many policies can contribute to learning.
+
+\begin{equation}
+    Q(S_t, A_t) \longleftarrow Q(S_t, A_t) + \alpha [R_{t+1} + \gamma \max\limits_{a}Q(S_{t+1}, a)- Q(S_t, A_t))] 
+\end{equation}
