@@ -2,21 +2,22 @@
 % Add the above to each chapter to make compiling the PDF easier in some editors.
 
 \chapter{Background}\label{chapter:background}
-\section{Manipulation and Grasping}
+\input{chapters/background/related_works.tex}
 \input{chapters/background/reinforcement_learning.tex}
     \input{chapters/background/subsections/mdp.tex}
     \input{chapters/background/subsections/reward_value.tex}
     \input{chapters/background/subsections/q_learning.tex}
-    \subsection{Value-Based Reinforcement Learning}
-        \subsubsection{Q-network}
-        \subsubsection{Extension of Q-networks}
-        \subsubsection{Branch Dueeling Q-networks}
-    \subsection{Policy-Based Reinforcement Learning}
-        \subsubsection{Entropy-Based Approach}
-        \subsubsection{Soft Actor Critic}
-    \subsection{Off-Policy RL}
-    \subsection{On-Policy RL}
-\input{chapters/background/neural_nets.tex}
+\input{chapters/background/function_approx.tex}
+        \input{chapters/background/subsections/neural_nets.tex}
+
+\input{chapters/background/value_based.tex}
+        \subsection{Extension of Q-networks}
+        \subsection{Branch Dueeling Q-networks}
+\input{chapters/background/policy_based.tex}
+        \subsection{Entropy-Based Approach}
+        \subsection{Soft Actor Critic}
+    % \subsection{Off-Policy RL}
+    % \subsection{On-Policy RL}
 
 \input{chapters/background/curriculum_learning.tex}
 \input{chapters/background/simulator_choice.tex}

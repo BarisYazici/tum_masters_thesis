@@ -1,0 +1,53 @@
+\section{Function Approximation}
+As mentioned before, it is often not possible to find either the optimal policy or the optimal value function due to computational resources. It is usually enough to find approximate solutions. Various function approximators are available for us to use. The main categorization follows as; linear and nonlinear function approximators. Their working principle is similar; they both follow a specific policy and sample experiences. Based on the experiences they approximate either policy or the value function. 
+% by generalizing the states it has been over the states the agent has not been so far.
+
+The application of neural networks provided RL methods a boost.(REFERENCE) Since the introduction of function approximators, the success of RL applications has increased significantly. Although function approximation tools bring convergency issues in some corner cases, it shows excellent success practically. 
+
+If one defines the value function under some weight parameterization, then the \(V(s, w)\) notation replaces the \(V(s)\). To find suitable weight parameters that represent the value function as general as possible, one needs to update parameters \(w\) at each step towards the smallest loss region based on a particular objective description. Firstly, we need to define an objective function and then find a method to tweak our weight parameters towards the objective gradually. 
+There are a couple of possible objectives to learn in the literature; the state-value function, action-value function, or the directly the policy.
+In the case of the state value function, one can choose the objective function as the mean squared value loss between the estimated state-value function and the target state-value function (\ref{eqn:state-value}). While for policy approximation, expected return represents the objective function \ref{eqn:policy-objective}. 
+
+(Silebilirim)
+Target state-value function can be the monte-Carlo or TD target. Monte Carlo’s target is the expected return \((G_t)\), and TD target is the bootstrapped value. The main difference between those targets is that Monte Carlo ensured to converge to a global optimum. In contrast, the bootstrapped TD target converges only to a local optimum near the global optimum. 
+(Silebilirim)
+
+\begin{equation}
+    \label{eqn:state-value}
+    VE(w) = \sum\limits_{s\in S} \mu(s)[v_\pi(s) - \hat{v}(s,w)]^2
+\end{equation}
+
+
+Secondly, one needs a way to optimize the objective function. The stochastic gradient descent method is the most prominent solution to improve the weight parameters based on a defined loss function. \ref{eqn:optimization} shows one gradient update step of the stochastic gradient descent method on the weight vector.  
+
+\begin{equation}
+    \label{eqn:optimization}
+    w_{t+1} = w_t - \frac{1}{2}\alpha\nabla\Big[v_{\pi}(s) - \hat{v}(s,w)\Big]^2
+\end{equation}
+
+The optimal weight vector needs to find the right balance between strongly representing one state and generalizing to similar unseen states. As a result, our approximator needs to avoid either overfitting or underfitting.
+
+% \subsection{Action Value Function Approximation}
+
+One can also approximate action-value function in the same way as state-value function. The gradient update step of the action-value function is similar to the state-value function as in \ref{eqn:action_value}
+
+\begin{equation}
+    \label{eqn:action_value}
+    w_{t+1} = w_t -\alpha\Big[U_t - \hat{q}(S_t,A_t, w_t)\Big]\nabla\hat{q}(S_t, A_t, w_t)
+\end{equation}
+\(U_t\) being the target of the approximation can be either TD or Monte Carlo target.
+
+% \subsection{Policy Approximation}
+
+So far, we have only considered the function approximation on the action and state functions.  Another promising and popular technique is to approximate the policy function directly. Policy function can point us in a more direct way than action and state values. Since it directly aims to solve the problem at hand, to find the optimal policy \cite{SpinningUp2018}.
+The objective function of policy gradient methods is simply the expectation of total return under policy \(\pi\).
+
+\begin{equation}
+    \label{eqn:policy-objective}
+    J(\theta) = E\Big[\sum\limits_{t=0}^H R(s_t, u_t)\Big]
+\end{equation}
+
+
+\begin{equation}
+    \theta \leftarrow \theta + \alpha\nabla_{\theta}J(\theta) 
+\end{equation}
