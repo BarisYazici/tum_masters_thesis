@@ -2167,13 +2167,30 @@
     <bcf:citekey order="45">Mnih</bcf:citekey>
     <bcf:citekey order="46">Sutton2018</bcf:citekey>
     <bcf:citekey order="47">SpinningUp2018</bcf:citekey>
-    <bcf:citekey order="48">Sutton2018</bcf:citekey>
-    <bcf:citekey order="49">SpinningUp2018</bcf:citekey>
-    <bcf:citekey order="50">Mnih</bcf:citekey>
-    <bcf:citekey order="51">SpinningUp2018</bcf:citekey>
-    <bcf:citekey order="52">Sutton2018</bcf:citekey>
-    <bcf:citekey order="53">Lin1993</bcf:citekey>
-    <bcf:citekey order="54">Mnih</bcf:citekey>
+    <bcf:citekey order="48">Todorov2012</bcf:citekey>
+    <bcf:citekey order="49">OpenAIgym</bcf:citekey>
+    <bcf:citekey order="50">Erez2015</bcf:citekey>
+    <bcf:citekey order="51">MujocoPy17</bcf:citekey>
+    <bcf:citekey order="52">Erez2015</bcf:citekey>
+    <bcf:citekey order="53">Erez2015</bcf:citekey>
+    <bcf:citekey order="54">Erez2015</bcf:citekey>
+    <bcf:citekey order="55">Erez2015</bcf:citekey>
+    <bcf:citekey order="56">Pitonakova2018</bcf:citekey>
+    <bcf:citekey order="57">RLBullet</bcf:citekey>
+    <bcf:citekey order="58">Quillen2018</bcf:citekey>
+    <bcf:citekey order="59">Breyer2018</bcf:citekey>
+    <bcf:citekey order="60">Erez2015</bcf:citekey>
+    <bcf:citekey order="61">StableBullet</bcf:citekey>
+    <bcf:citekey order="62">stable-baselines</bcf:citekey>
+    <bcf:citekey order="63">Erez2015</bcf:citekey>
+    <bcf:citekey order="64">Erez2015</bcf:citekey>
+    <bcf:citekey order="65">Sutton2018</bcf:citekey>
+    <bcf:citekey order="66">SpinningUp2018</bcf:citekey>
+    <bcf:citekey order="67">Mnih</bcf:citekey>
+    <bcf:citekey order="68">SpinningUp2018</bcf:citekey>
+    <bcf:citekey order="69">Sutton2018</bcf:citekey>
+    <bcf:citekey order="70">Lin1993</bcf:citekey>
+    <bcf:citekey order="71">Mnih</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="none/global/" type="entry" sortscheme="none" sortnamekeyscheme="global" labelprefix="">
   <bcf:sorting>

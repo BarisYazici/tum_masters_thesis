@@ -87,7 +87,9 @@ The learning setup is similar to the Quillen et al. with one robot gripper and r
 
 Breyer et al. enhanced the RL based data-driven grasp approach with Curriculum Learning and the introduction of auto-encoder for perception. Thanks to the curriculum learning setup, which increases the task difficulty based on the agent’s current performance, they shortened the time for the agent to explore the environment. In other words, curriculum learning guides the agent throughout its learning phase. Besides, with the help of autoencoder for the perception layer, their network tends to spend less time to comprehend the observation compare to the Quillen et al.’s approach. 
 
-Unlike Quillen et al., they experimented with entropy-based off-policy RL algorithm, TRPO. Entropy-based algorithms tend to explore better than epsilon greedy based exploration. This property may also contribute to the higher success rate and faster convergence. After training grasping models on simulation, they tested them on a real robot. Although they didn’t use domain randomization to minimize the reality gap, they achieved up to \(78\%\) success rate.
+Unlike Quillen et al., they experimented with policy-based on-policy RL algorithm, TRPO. Policy -based algorithms tend to 
+\todo{Policy based vs. value based here not exploration }
+explore better than epsilon greedy based exploration. This property may also contribute to the higher success rate and faster convergence. After training grasping models on simulation, they tested them on a real robot. Although they didn’t use domain randomization to minimize the reality gap, they achieved up to \(78\%\) success rate.
 
 \begin{figure}[htbp]
     \centering

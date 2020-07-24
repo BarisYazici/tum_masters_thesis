@@ -361,3 +361,102 @@
   volume = {2017-Septe},
   year = {2017}
 }
+
+
+@article{Erez2015,
+  abstract = {There is growing need for software tools that can accurately simulate the complex dynamics of modern robots. While a number of candidates exist, the field is fragmented. It is difficult to select the best tool for a given project, or to predict how much effort will be needed and what the ultimate simulation performance will be. Here we introduce new quantitative measures of simulation performance, focusing on the numerical challenges that are typical for robotics as opposed to multi-body dynamics and gaming. We then present extensive simulation results, obtained within a new software framework for instantiating the same model in multiple engines and running side-by-side comparisons. Overall we find that each engine performs best on the type of system it was designed and optimized for: MuJoCo wins the robotics-related tests, while the gaming engines win the gaming-related tests without a clear leader among them. The simulations are illustrated in the accompanying movie.},
+  author = {Erez, Tom and Tassa, Yuval and Todorov, Emanuel},
+  doi = {10.1109/ICRA.2015.7139807},
+  file = {:Users/barisyazici/Downloads/ErezICRA15.pdf:pdf},
+  issn = {10504729},
+  journal = {Proceedings - IEEE International Conference on Robotics and Automation},
+  mendeley-groups = {SimulationComparison},
+  number = {June},
+  pages = {4397--4404},
+  title = {{Simulation tools for model-based robotics: Comparison of Bullet, Havok, MuJoCo, ODE and PhysX}},
+  volume = {2015-June},
+  year = {2015}
+}
+
+@misc{OpenAIgym,
+  Author = {Greg Brockman and Vicki Cheung and Ludwig Pettersson and Jonas Schneider and John Schulman and Jie Tang and Wojciech Zaremba},
+  Title = {OpenAI Gym},
+  Year = {2016},
+  Eprint = {arXiv:1606.01540},
+}
+
+@MISC{coumans2020,
+  author =   {Erwin Coumans and Yunfei Bai},
+  title =    {PyBullet, a Python module for physics simulation for games, robotics and machine learning},
+  howpublished = {\url{http://pybullet.org}},
+  year = {2016--2020}
+}
+
+@article{Pitonakova2018,
+  abstract = {In this paper, the characteristics and performance of three open-source simulators for robotics, V-REP, Gazebo and ARGoS, are thoroughly analysed and compared. While they all allow for programming in C++, they also represent clear alternatives when it comes to the trade-off between complexity and performance. Attention is given to their built-in features, robot libraries, programming methods and the usability of their user interfaces. Benchmark test results are reported in order to identify how well the simulators can cope with environments of varying complexity. The richness of features of V-REP and the strong performance of Gazebo and ARGoS in complex scenes are highlighted. Various usability issues of Gazebo are also noted.},
+  author = {Pitonakova, Lenka and Giuliani, Manuel and Pipe, Anthony and Winfield, Alan},
+  doi = {10.1007/978-3-319-96728-8_30},
+  file = {:Users/barisyazici/Downloads/simulatorsComparison.pdf:pdf},
+  isbn = {9783319967271},
+  issn = {16113349},
+  journal = {Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)},
+  mendeley-groups = {SimulationComparison},
+  pages = {357--368},
+  title = {{Feature and performance comparison of the V-REP, Gazebo and ARGoS robot simulators}},
+  volume = {10965 LNAI},
+  year = {2018}
+}
+
+@inproceedings{Gazebo2004,
+  abstract = {Simulators have played a critical role in robotics research as tools for quick and efficient testing of new concepts, strategies, and algorithms. To date, most simulators have been restricted to 2D worlds, and few have matured to the point where they are both highly capable and easily adaptable. Gazebo is designed to fill this niche by creating a 3D dynamic multi-robot environment capable of recreating the complex worlds that will be encountered by the next gen- eration of mobile robots. Its open source status, fine grained control, and high fidelity place Gazebo in a unique position to become more than just a stepping stone between the drawing board and real hardware: data visualization, simulation of remote environments, and even reverse engineering of black- box systems are all possible applications. Gazebo is developed in cooperation with the Player and Stage projects [1], [2], [3], and is available from http://playerstage.sourceforge.net/gazebo/ gazebo.html.},
+  author = {{Koenig Nathan} and Andrew, Howard},
+  booktitle = {International conference on intelligent robot and systesms},
+  file = {:Users/barisyazici/Downloads/gazebo.pdf:pdf},
+  isbn = {0780384636},
+  mendeley-groups = {SimulationComparison},
+  pages = {2149--2154},
+  title = {{Design and Use Paradigms for Gazebo ,An Open-Source Multi-Robot Simulator}},
+  year = {2004}
+}
+
+@article{Todorov2012,
+  abstract = {We describe a new physics engine tailored to model-based control. Multi-joint dynamics are represented in generalized coordinates and computed via recursive algorithms. Contact responses are computed via efficient new algorithms we have developed, based on the modern velocity-stepping approach which avoids the difficulties with spring-dampers. Models are specified using either a high-level C++ API or an intuitive XML file format. A built-in compiler transforms the user model into an optimized data structure used for runtime computation. The engine can compute both forward and inverse dynamics. The latter are well-defined even in the presence of contacts and equality constraints. The model can include tendon wrapping as well as actuator activation states (e.g. pneumatic cylinders or muscles). To facilitate optimal control applications and in particular sampling and finite differencing, the dynamics can be evaluated for different states and controls in parallel. Around 400,000 dynamics evaluations per second are possible on a 12-core machine, for a 3D homanoid with 18 dofs and 6 active contacts. We have already used the engine in a number of control applications. It will soon be made publicly available. {\textcopyright} 2012 IEEE.},
+  author = {Todorov, Emanuel and Erez, Tom and Tassa, Yuval},
+  doi = {10.1109/IROS.2012.6386109},
+  file = {:Users/barisyazici/Downloads/TodorovIROS12(1).pdf:pdf},
+  isbn = {9781467317375},
+  issn = {21530858},
+  journal = {IEEE International Conference on Intelligent Robots and Systems},
+  mendeley-groups = {SimulationComparison},
+  pages = {5026--5033},
+  title = {{MuJoCo: A physics engine for model-based control}},
+  year = {2012}
+}
+
+@misc{MujocoPy17,
+  author       = {OpenAI},
+  title        = {mujoco-py},
+  publisher    = {GitHub},
+  journal      = {GitHub repository},
+  howpublished = {\url{https://github.com/openai/mujoco-py}},
+  year         = {2017}
+}
+
+@misc{stable-baselines,
+  author = {Hill, Ashley and Raffin, Antonin and Ernestus, Maximilian and Gleave, Adam and Kanervisto, Anssi and Traore, Rene and Dhariwal, Prafulla and Hesse, Christopher and Klimov, Oleg and Nichol, Alex and Plappert, Matthias and Radford, Alec and Schulman, John and Sidor, Szymon and Wu, Yuhuai},
+  title = {Stable Baselines},
+  year = {2018},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/hill-a/stable-baselines}},
+}
+
+@misc{StableBullet,
+  author       = {Erwin Coumans and Yunfei Bai},
+  title        = {PyBullet, a Python module for physics simulation for games, robotics and machine learning},
+  publisher    = {GitHub},
+  journal      = {GitHub repository},
+  howpublished = {\url{https://bit.ly/3jqU7Kd}},
+  year         = {2016--2020}
+}
+

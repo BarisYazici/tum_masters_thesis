@@ -1,0 +1,47 @@
+\subsection{PyBullet}
+
+PyBullet is a simulator built on the Bullet physics engine. Bullet’s initial release dates back to 2006. Bullet engine was initially game, and graphics focused, but lately, with PyBullet, it has been increasingly popular among roboticists. We decided on using PyBullet for several strong reasons and overall satisfied by the performance and the features it offers. Firstly, PyBullet recently published their RL resources on Github \cite{RLBullet}. These resources provide everything necessary to quickly start experimenting with any choice of robot, environment, and algorithm. Secondly, 
+our reference papers, in the area of RL robotics research, are using PyBullet for their experiments \cite{Quillen2018} \cite{Breyer2018}. Therefore, it is more convenient to compare results by using the same physical engine to avoid simulation differences. Thirdly, it has sizeable open-source support and free to use. 
+
+On the other hand, based on Erez et al. performance tasks, which compares Bullet, Mujoco, ODE, and PhysX engines, Bullet is either at the last place or the one above the last position \ref{fig:BulletComp} figure. Similarly, they mention the incompatibility of Bullet Engine’s spring-damper system with the standard PD controller design \cite{Erez2015}.
+
+Many open-source robotics learning resources migrating to PyBullet. This migration brings more open-source contributors who are more focused on Reinforcement Learning. For example, open-source contributors recently developed multi-threading GPU support to PyBullet. Also, stable-baselines creators implemented a RL training package under Bullet’s Github repository \cite{StableBullet} \cite{stable-baselines}. 
+
+In conclusion, PyBullet is the most actively developed physics engine among three contenders. Thanks to the open-source community, any small bug is reported and solved in a short time, which is missing in Gazebo and Mujoco. We assume more roboticist will migrate to PyBullet in the future. Hereby, it will become primary physics engine for robotics research. Despite research papers represent Pybullet engine performance as the worst among three, in practice we have not noticed any significant failure related to engine performance.
+
+
+\begin{figure}
+
+    \begin{subfigure}{0.33\textwidth}
+      \includegraphics[width=\linewidth]{figures/BulletCom1.png}
+      \caption{} \label{fig:1a}
+    \end{subfigure}%
+    \hspace*{\fill}   % maximize separation between the subfigures
+    \begin{subfigure}{0.33\textwidth}
+      \includegraphics[width=\linewidth]{figures/BulletCom2.png}
+      \caption{} \label{fig:1b}
+    \end{subfigure}%
+    \hspace*{\fill}   % maximize separation between the subfigures
+    \begin{subfigure}{0.33\textwidth}
+      \includegraphics[width=\linewidth]{figures/BulletCom3.png}
+      \caption{} \label{fig:1b}
+    \end{subfigure}%
+
+\caption{Comparing physics engine performances. Bullet is either at the last place or the one above the last position \cite{Erez2015} \label{fig:BulletComp}}
+\end{figure}
+
+
+\begin{figure}
+
+    \begin{subfigure}{0.49\textwidth}
+      \includegraphics[width=\linewidth]{figures/PybulletEnv1.png}
+      \caption{} \label{fig:1a}
+    \end{subfigure}%
+    \hspace*{\fill}   % maximize separation between the subfigures
+    \begin{subfigure}{0.49\textwidth}
+      \includegraphics[width=\linewidth]{figures/PybulletEnv2.png}
+      \caption{} \label{fig:1b}
+    \end{subfigure}%
+
+\caption{Screenshot from our trained hand model on Pybullet \label{fig:gripperbullet}}
+\end{figure}
