@@ -460,3 +460,179 @@
   year         = {2016--2020}
 }
 
+@article{Haarnoja2018,
+  abstract = {Model-free deep reinforcement learning (RL) algorithms have been demonstrated on a range of challenging decision making and control tasks. However, these methods typically suffer from two major challenges: very high sample complexity and brittle convergence properties, which necessitate meticulous hyperparameter tuning. Both of these challenges severely limit the applicability of such methods to complex, real-world domains. In this paper, we propose soft actor-critic, an off-policy actor-critic deep RL algorithm based on the maximum entropy reinforcement learning framework. In this framework, the actor aims to maximize expected reward while also maximizing entropy-that is, to succeed at the task while acting as randomly as possible. Prior deep RL methods based on this framework have been formulated as Q-learning methods. By combining off-policy updates with a stable stochastic actorcritic formulation, our method achieves state-ofthe-art performance on a range of continuous control benchmark tasks, outperforming prior onpolicy and off-policy methods. Furthermore, we demonstrate that, in contrast to other off-policy algorithms, our approach is very stable, achieving very similar performance across different random seeds.},
+  archivePrefix = {arXiv},
+  arxivId = {arXiv:1801.01290v2},
+  author = {Haarnoja, Tuomas and Zhou, Aurick and Abbeel, Pieter and Levine, Sergey},
+  eprint = {arXiv:1801.01290v2},
+  file = {:Users/barisyazici/Downloads/1801.01290.pdf:pdf},
+  isbn = {9781510867963},
+  journal = {35th International Conference on Machine Learning, ICML 2018},
+  mendeley-groups = {EntropyBasedAlgs},
+  pages = {2976--2989},
+  title = {{Soft actor-critic: Off-policy maximum entropy deep reinforcement learning with a stochastic actor}},
+  volume = {5},
+  year = {2018}
+}
+
+@article{Schulman2017,
+  abstract = {Two of the leading approaches for model-free reinforcement learning are policy gradient methods and {\$}Q{\$}-learning methods. {\$}Q{\$}-learning methods can be effective and sample-efficient when they work, however, it is not well-understood why they work, since empirically, the {\$}Q{\$}-values they estimate are very inaccurate. A partial explanation may be that {\$}Q{\$}-learning methods are secretly implementing policy gradient updates: we show that there is a precise equivalence between {\$}Q{\$}-learning and policy gradient methods in the setting of entropy-regularized reinforcement learning, that "soft" (entropy-regularized) {\$}Q{\$}-learning is exactly equivalent to a policy gradient method. We also point out a connection between {\$}Q{\$}-learning methods and natural policy gradient methods. Experimentally, we explore the entropy-regularized versions of {\$}Q{\$}-learning and policy gradients, and we find them to perform as well as (or slightly better than) the standard variants on the Atari benchmark. We also show that the equivalence holds in practical settings by constructing a {\$}Q{\$}-learning method that closely matches the learning dynamics of A3C without using a target network or {\$}\backslashepsilon{\$}-greedy exploration schedule.},
+  archivePrefix = {arXiv},
+  arxivId = {1704.06440},
+  author = {Schulman, John and Chen, Xi and Abbeel, Pieter},
+  eprint = {1704.06440},
+  file = {:Users/barisyazici/Downloads/1704.06440.pdf:pdf},
+  mendeley-groups = {EntropyBasedAlgs},
+  pages = {1--15},
+  title = {{Equivalence Between Policy Gradients and Soft Q-Learning}},
+  url = {http://arxiv.org/abs/1704.06440},
+  year = {2017}
+}
+
+@article{Haarnoja2017,
+  abstract = {We propose a method for learning expressive energy-based policies for continuous states and actions, which has been feasible only in tabular domains before. We apply our method to learning maximum entropy policies, resulting into a new algorithm, called soft Q-learning, that expresses the optimal policy via a Boltzmann distribution. We use the recently proposed amortized Stein variational gradient descent to learn a stochastic sampling network that approximates samples from this distribution. The benefits of the proposed algorithm include improved exploration and compositionality that allows transferring skills between tasks, which we confirm in simulated experiments with swimming and walking robots. We also draw a connection to actor-critic methods, which can be viewed performing approximate inference on the corresponding energy-based model.},
+  archivePrefix = {arXiv},
+  arxivId = {1702.08165},
+  author = {Haarnoja, Tuomas and Tang, Haoran and Abbeel, Pieter and Levine, Sergey},
+  eprint = {1702.08165},
+  file = {:Users/barisyazici/Downloads/haarnoja17a.pdf:pdf},
+  isbn = {9781510855144},
+  journal = {34th International Conference on Machine Learning, ICML 2017},
+  mendeley-groups = {EntropyBasedAlgs},
+  pages = {2171--2186},
+  title = {{Reinforcement learning with deep energy-based policies}},
+  volume = {3},
+  year = {2017}
+}
+
+@article{Ziebart2010,
+  abstract = {Appropriately generalizing predictive algorithms from a few training examples of human behavior is a key challenge for forecasting future behavior. In this thesis, we introduce the principle of maximum causal entropy, which integrates decision theory with information theory to create a novel probabilistic framework for predicting sequences of behavior. This approach matches purposeful measures of behavior while otherwise being as uncertain as possible–all within settings where relevant information is sequentially revealed over time. This provides the worst-case predictive log-loss guarantees of maximum entropy (Gr{\"{u}}nwald {\&} Dawid, 2003) in the reward-based, sequential decision setting of inverse optimal control (Abbeel {\&} Ng, 2004). We derive probabilistic models for decision, control, and multi-player game settings using this approach. We then develop corresponding algorithms for efficient inference that are relaxations of the Bellman equation (Bellman, 1957) and learning algorithms that leverage convexity. We apply the models and algorithms to a number of real world decision prediction tasks. Specifically, we present empirical evaluations of the approach in the domains of vehicle route preference modeling using 100,000 miles of Pittsburgh taxi data, pedestrian motion forecasting from weeks of movement data in the Intel Pittsburgh lab, and robust prediction of game play in stochastic multi-player games.},
+  author = {Ziebart, Brian},
+  file = {:Users/barisyazici/Downloads/CMU-ML-10-110.pdf:pdf},
+  issn = {{\textless}null{\textgreater}},
+  journal = {Thesis},
+  mendeley-groups = {EntropyBasedAlgs},
+  number = {December},
+  pages = {1--215},
+  title = {{Modeling Purposeful Adaptive Behavior with the Principle of Maximum Causal Entropy}},
+  url = {papers2://publication/uuid/AEB1E579-7EC8-4DAD-8B3C-FFE66E8B314F},
+  year = {2010}
+}
+
+@article{Konda2000,
+  abstract = {We propose and analyze a class of actor-critic algorithms for simulation-based optimization of a Markov decision process over a parameterized family of randomized stationary policies. These are two-time-scale algorithms in which the critic uses TD learning with a linear approximation architecture and the actor is updated in an approximate gradient direction based on information provided by the critic. We show that the features for the critic should span a subspace prescribed by the choice of parameterization of the actor. We conclude by discussing convergence properties and some open problems.},
+  author = {Konda, Vijay R. and Tsitsiklis, John N.},
+  file = {:Users/barisyazici/Downloads/1786-actor-critic-algorithms.pdf:pdf},
+  isbn = {0262194503},
+  issn = {10495258},
+  journal = {Advances in Neural Information Processing Systems},
+  mendeley-groups = {Policy Based},
+  pages = {1008--1014},
+  title = {{Actor-critic algorithms}},
+  year = {2000}
+}
+
+@article{Tavakoli2018,
+  abstract = {Discrete-action algorithms have been central to numerous recent successes of deep reinforcement learning. However, applying these algorithms to high-dimensional action tasks requires tackling the combinatorial increase of the number of possible actions with the number of action dimensions. This problem is further exacerbated for continuous-action tasks that require fine control of actions via discretization. In this paper, we propose a novel neural architecture featuring a shared decision module followed by several network branches, one for each action dimension. This approach achieves a linear increase of the number of network outputs with the number of degrees of freedom by allowing a level of independence for each individual action dimension. To illustrate the approach, we present a novel agent, called Branching Dueling Q-Network (BDQ), as a branching variant of the Dueling Double Deep Q-Network (Dueling DDQN). We evaluate the performance of our agent on a set of challenging continuous control tasks. The empirical results show that the proposed agent scales gracefully to environments with increasing action dimensionality and indicate the significance of the shared decision module in coordination of the distributed action branches. Furthermore, we show that the proposed agent performs competitively against a state-of-the-art continuous control algorithm, Deep Deterministic Policy Gradient (DDPG).},
+  archivePrefix = {arXiv},
+  arxivId = {1711.08946},
+  author = {Tavakoli, Arash and Pardo, Fabio and Kormushev, Petar},
+  eprint = {1711.08946},
+  file = {:Users/barisyazici/Library/Application Support/Mendeley Desktop/Downloaded/Tavakoli, Pardo, Kormushev - 2018 - Action branching architectures for deep reinforcement learning.pdf:pdf},
+  isbn = {9781577358008},
+  journal = {32nd AAAI Conference on Artificial Intelligence, AAAI 2018},
+  mendeley-groups = {DQN},
+  pages = {4131--4138},
+  title = {{Action branching architectures for deep reinforcement learning}},
+  year = {2018}
+}
+
+@article{Lillicrap2016,
+  abstract = {We adapt the ideas underlying the success of Deep Q-Learning to the continuous action domain. We present an actor-critic, model-free algorithm based on the deterministic policy gradient that can operate over continuous action spaces. Using the same learning algorithm, network architecture and hyper-parameters, our algorithm robustly solves more than 20 simulated physics tasks, including classic problems such as cartpole swing-up, dexterous manipulation, legged locomotion and car driving. Our algorithm is able to find policies whose performance is competitive with those found by a planning algorithm with full access to the dynamics of the domain and its derivatives. We further demonstrate that for many of the tasks the algorithm can learn policies “end-to-end”: directly from raw pixel inputs.},
+  archivePrefix = {arXiv},
+  arxivId = {1509.02971},
+  author = {Lillicrap, Timothy P. and Hunt, Jonathan J. and Pritzel, Alexander and Heess, Nicolas and Erez, Tom and Tassa, Yuval and Silver, David and Wierstra, Daan},
+  eprint = {1509.02971},
+  file = {:Users/barisyazici/Library/Application Support/Mendeley Desktop/Downloaded/Lillicrap et al. - 2016 - Continuous control with deep reinforcement learning.pdf:pdf},
+  journal = {4th International Conference on Learning Representations, ICLR 2016 - Conference Track Proceedings},
+  mendeley-groups = {RL Baselines},
+  title = {{Continuous control with deep reinforcement learning}},
+  year = {2016}
+}
+
+@article{Wang2016,
+  abstract = {In recent years there have been many successes of using deep representations in reinforcement learning. Still, many of these applications use conventional architectures, such as convolutional networks, LSTMs, or auto-encoders. In this paper, we present a new neural network architecture for model-free reinforcement learning. Our dueling network represents two separate estimators: one for the state value function and one for the state-dependent action advantage function. The main benefit of this factoring is to generalize learning across actions without imposing any change to the underlying reinforcement learning algorithm. Our results show that this architecture leads to better policy evaluation in the presence of many similar-valued actions. Moreover, the dueling architecture enables our RL agent to outperform the state-of-the-art on the Atari 2600 domain.},
+  archivePrefix = {arXiv},
+  arxivId = {1511.06581},
+  author = {Wang, Ziyu and Schaul, Tom and Hessel, Matteo and {Van Hasselt}, Hado and Lanctot, Marc and {De Frcitas}, Nando},
+  eprint = {1511.06581},
+  file = {:Users/barisyazici/Downloads/1511.06581.pdf:pdf},
+  isbn = {9781510829008},
+  journal = {33rd International Conference on Machine Learning, ICML 2016},
+  mendeley-groups = {DQN},
+  number = {9},
+  pages = {2939--2947},
+  title = {{Dueling Network Architectures for Deep Reinforcement Learning}},
+  volume = {4},
+  year = {2016}
+}
+
+@misc{Keras,
+  title={Keras},
+  author={Chollet, Fran\c{c}ois and others},
+  year={2015},
+  howpublished={\url{https://keras.io}},
+}
+
+@article{Tensoflow,
+  abstract = {TensorFlow is a machine learning system that operates at large scale and in heterogeneous environments. Tensor-Flow uses dataflow graphs to represent computation, shared state, and the operations that mutate that state. It maps the nodes of a dataflow graph across many machines in a cluster, and within a machine across multiple computational devices, including multicore CPUs, generalpurpose GPUs, and custom-designed ASICs known as Tensor Processing Units (TPUs). This architecture gives flexibility to the application developer: whereas in previous "parameter server" designs the management of shared state is built into the system, TensorFlow enables developers to experiment with novel optimizations and training algorithms. TensorFlow supports a variety of applications, with a focus on training and inference on deep neural networks. Several Google services use TensorFlow in production, we have released it as an open-source project, and it has become widely used for machine learning research. In this paper, we describe the TensorFlow dataflow model and demonstrate the compelling performance that Tensor-Flow achieves for several real-world applications.},
+  archivePrefix = {arXiv},
+  arxivId = {1605.08695},
+  author = {Abadi, Mart{\'{i}}n and Barham, Paul and Chen, Jianmin and Chen, Zhifeng and Davis, Andy and Dean, Jeffrey and Devin, Matthieu and Ghemawat, Sanjay and Irving, Geoffrey and Isard, Michael and Kudlur, Manjunath and Levenberg, Josh and Monga, Rajat and Moore, Sherry and Murray, Derek G. and Steiner, Benoit and Tucker, Paul and Vasudevan, Vijay and Warden, Pete and Wicke, Martin and Yu, Yuan and Zheng, Xiaoqiang},
+  eprint = {1605.08695},
+  file = {:Users/barisyazici/Downloads/1605.08695.pdf:pdf},
+  isbn = {9781931971331},
+  journal = {Proceedings of the 12th USENIX Symposium on Operating Systems Design and Implementation, OSDI 2016},
+  mendeley-groups = {Machine Learning},
+  pages = {265--283},
+  title = {{TensorFlow: A system for large-scale machine learning}},
+  year = {2016}
+}
+
+@article{PyTorch,
+  abstract = {This paper presents the design, implementation, and evaluation of the PyTorch distributed data parallel module. PyTorch is a widely-adopted scientific computing package used in deep learning research and applications. Recent advances in deep learning argue for the value of large datasets and large models, which necessitates the ability to scale out model training to more computational resources. Data parallelism has emerged as a popular solution for distributed training thanks to its straightforward principle and broad applicability. In general, the technique of distributed data parallelism replicates the model on every computational resource to generate gradients independently and then communicates those gradients at each iteration to keep model replicas consistent. Despite the conceptual simplicity of the technique, the subtle dependencies between computation and communication make it non-trivial to optimize the distributed training efficiency. As of v1.5, PyTorch natively provides several techniques to accelerate distributed data parallel, including bucketing gradients, overlapping computation with communication, and skipping gradient synchronization. Evaluations show that, when configured appropriately, the PyTorch distributed data parallel module attains near-linear scalability using 256 GPUs.},
+  archivePrefix = {arXiv},
+  arxivId = {2006.15704},
+  author = {Li, Shen and Zhao, Yanli and Varma, Rohan and Salpekar, Omkar and Noordhuis, Pieter and Li, Teng and Paszke, Adam and Smith, Jeff and Vaughan, Brian and Damania, Pritam and Chintala, Soumith},
+  eprint = {2006.15704},
+  file = {:Users/barisyazici/Downloads/2006.15704.pdf:pdf},
+  mendeley-groups = {Machine Learning},
+  title = {{PyTorch Distributed: Experiences on Accelerating Data Parallel Training}},
+  url = {http://arxiv.org/abs/2006.15704},
+  year = {2020}
+}
+
+@article{Horace,
+  author = {He, Horace},
+  title = {The State of Machine Learning Frameworks in 2019},
+  journal = {The Gradient},
+  year = {2019},
+  howpublished = {\url{https://thegradient.pub/state-of-ml-frameworks-2019-pytorch-dominates-research-tensorflow-dominates-industry/ } },
+}
+
+@misc{stable-baselines3,
+  author = {Raffin, Antonin and Hill, Ashley and Ernestus, Maximilian and Gleave, Adam and Kanervisto, Anssi and Dormann, Noah},
+  title = {Stable Baselines3},
+  year = {2019},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/DLR-RM/stable-baselines3}},
+}
+
+@inproceedings{optuna_2019,
+    title={Optuna: A Next-generation Hyperparameter Optimization Framework},
+    author={Akiba, Takuya and Sano, Shotaro and Yanase, Toshihiko and Ohta, Takeru and Koyama, Masanori},
+    booktitle={Proceedings of the 25rd {ACM} {SIGKDD} International Conference on Knowledge Discovery and Data Mining},
+    year={2019}
+}

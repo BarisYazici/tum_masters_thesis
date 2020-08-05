@@ -5,24 +5,24 @@ our reference papers, in the area of RL robotics research, are using PyBullet fo
 
 On the other hand, based on Erez et al. performance tasks, which compares Bullet, Mujoco, ODE, and PhysX engines, Bullet is either at the last place or the one above the last position \ref{fig:BulletComp} figure. Similarly, they mention the incompatibility of Bullet Engine’s spring-damper system with the standard PD controller design \cite{Erez2015}.
 
-Many open-source robotics learning resources migrating to PyBullet. This migration brings more open-source contributors who are more focused on Reinforcement Learning. For example, open-source contributors recently developed multi-threading GPU support to PyBullet. Also, stable-baselines creators implemented a RL training package under Bullet’s Github repository \cite{StableBullet} \cite{stable-baselines}. 
+Many open-source robotics learning resources migrating to PyBullet. This migration brings more open-source contributors who are more focused on Reinforcement Learning. For example, open-source contributors recently developed multi-threading GPU support to PyBullet. Also, stable-baselines\footnote{\url{https://github.com/hill-a/stable-baselines}} creators implemented a RL training package under Bullet’s Github repository\footnote{\url{https://bit.ly/3jqU7Kd}} \cite{stable-baselines}. 
 
 In conclusion, PyBullet is the most actively developed physics engine among three contenders. Thanks to the open-source community, any small bug is reported and solved in a short time, which is missing in Gazebo and Mujoco. We assume more roboticist will migrate to PyBullet in the future. Hereby, it will become primary physics engine for robotics research. Despite research papers represent Pybullet engine performance as the worst among three, in practice we have not noticed any significant failure related to engine performance.
 
 
 \begin{figure}
 
-    \begin{subfigure}{0.33\textwidth}
+    \begin{subfigure}{0.31\textwidth}
       \includegraphics[width=\linewidth]{figures/BulletCom1.png}
       \caption{} \label{fig:1a}
     \end{subfigure}%
     \hspace*{\fill}   % maximize separation between the subfigures
-    \begin{subfigure}{0.33\textwidth}
+    \begin{subfigure}{0.31\textwidth}
       \includegraphics[width=\linewidth]{figures/BulletCom2.png}
       \caption{} \label{fig:1b}
     \end{subfigure}%
     \hspace*{\fill}   % maximize separation between the subfigures
-    \begin{subfigure}{0.33\textwidth}
+    \begin{subfigure}{0.31\textwidth}
       \includegraphics[width=\linewidth]{figures/BulletCom3.png}
       \caption{} \label{fig:1b}
     \end{subfigure}%
