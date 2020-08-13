@@ -1,0 +1,13 @@
+\section{Robotics Environment Descriptions}
+
+We have two testbed environments: one with the simplified task description, another is the full task description. We primarily use the simplified environment to test and prune the algorithms quickly. Only if the model solves the simplified environment, we move forward to try it in the full environment. Those two descriptions deviate in terms of action, observation, reward, and curriculum definition. 
+
+The simplified environment has fewer action dimensions to control compare to the full environment. A total of three-dimensional action controls the x, y coordinates translation, and yaw rotation. Hence, every timestep it receives a fixed size of downward z-axis movement. Similar to Quillen et al. and Breyer et al. our gripper also automatically closes, when it reaches a certain height threshold
+
+The full environment, on the other hand, has full control over all dimensions. In the full environment, the gripper receives five-dimensional action to control cartesian coordinates (x, y, z), yaw rotation, and the gripper open/close. 
+
+Observation from the environment differs as well, based on the task description. In the simplified scenario agent only receives the hundred-dimensional encoded depth image. Whereas, in the full scenario, the agent gets the actuator width in addition to the hundred-dimensional encoder output. [\todo{yaz bir seyler daha} ]
+
+We used a custom shaped reward function for the environment setting. In the simplified environment, a sparse reward definition was used. \todo{Better}
+
+Curriculum strategy guides the agent to a more challenging environment structure based on the success rate of the agent. In our case, curriculum switch happens both on simplified and full environment definition at a \(70\%\) success rate. This switch triggers an increase of difficulty on the environment’s curriculum parameters such as max object count, object spawned area, and terminating object height.

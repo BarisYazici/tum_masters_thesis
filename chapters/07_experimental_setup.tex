@@ -1,9 +1,43 @@
 % !TeX root = ../main.tex
-% Add the above to each chapter to make compiling the PDF easier in some editors.
+% Add the above to each chapter to make compiling the PDF easier in some 
+
 
 \chapter{Experimental Setup}\label{chapter:experimental_setup}
 
-\section{Implementation}
+
+In this section, we will explain different types of experimental environments, reward, and observation structures.  
+
+
+\input{chapters/setup/problem_setup.tex}
+
+\input{chapters/setup/env_description.tex}
+
+\begin{table}[htbp]
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{lllll}
+    \toprule
+     Env. Description     & Action Space & Observation                                           & Reward        & Discount Factor \\ \midrule % \hline
+               Full       & 5            &  \shortstack{Encoder(100x1) + \\ Actuator Width(1x1)} & Shaped Reward & 0.99  \\  \midrule % \hline
+               Simplified & 3            & Encoder(100x1)                                        & Binary Reward & 1.0    \\      %\hline
+    \bottomrule
+\end{tabular}}
+\caption{Different paramters of Simplified and Full environment definitions}
+\end{table}
+
+\begin{table}[htbp]
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{|l|l|l|l|l|l|}
+    \hline
+    Env  & Curr Steps & Curr Success & Robot Height & Max Objects & Object Area \\ \hline
+    Simplified              & 4                & 0.7                          & [0.17, 0.27] & [3, 5]       & [0.01, 0.1]  \\ \hline
+    Full                    & 8                & 0.7                          & [0.15, 0.25] & [3, 5]       & [0.01, 0.1]  \\ \hline
+    \end{tabular}}
+    \caption{Curriculum Parameters of Simplified and Full environment descriptions}
+\end{table}
+\input{chapters/setup/observation.tex}
+\input{chapters/setup/robot_model.tex}
+\input{chapters/setup/data_acquisition.tex}
+
     \subsection{BDQ Algorighm Implementation}
     \subsubsection{Object Recognition}
     \subsection{Network Architecture}

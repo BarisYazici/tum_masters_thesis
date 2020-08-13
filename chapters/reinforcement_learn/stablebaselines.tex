@@ -4,17 +4,8 @@
 While the OpenAI gym framework identifies the environment, Stable Baselines provide the agent part of the RL framework. Stable Baselines is a powerful open-source fork of OpenAI baselines. Yet it is based on OpenAI Baselines; it has surpassed the performance of OpenAI Baselines in many ways. 
 The authors of Stable Baselines have composed a Medium article\footnote{\url{https://bit.ly/3ia3GvM}} that describes every additional feature and bug fix over OpenAI baselines. In this section, we will only mention the critical components needed for our project.
 
-First and foremost, Stable Baselines has strong support for the state-of-art algorithm SAC. SAC proved to be the best algorithm we tested on our environment. Apart from SAC, it support 10 more algorithms\footnote{a2c, 
-acer,
-acktr, 
-ddpg, 
-dqn,
-gail, 
-her, 
-ppo, 
-trpo, 
-td3
-}. Stable Baselines maintains a sophisticated save/load structure. Since, we aim to warm-start and fine-tune the neural network variables, we should be able to save and load the network variables individually. A use-case in our application is truncating the last soft-max layer of a saved model to change the action-space size. We often encountered problems with OpenAI Baselines save/load structure.
+First and foremost, Stable Baselines has strong support for the state-of-art algorithm SAC. SAC proved to be the best algorithm we tested on our environment. Apart from SAC, it support ten more algorithms\footnote{a2c, 
+acer, acktr, ddpg, dqn, gail, her, ppo, trpo, td3}. Stable Baselines maintains a sophisticated save/load structure. Since we aim to warm-start and fine-tune the neural network variables, we should be able to save and load the network variables individually. A use-case in our application is truncating the last soft-max layer of a saved model to change the action-space size. We often encountered problems with OpenAI Baselines save/load structure.
 
 Moreover, Stable Baselines supports input and reward normalization. Later in the result part, we will show our best performing model is equipped with both input and reward normalization.
 
