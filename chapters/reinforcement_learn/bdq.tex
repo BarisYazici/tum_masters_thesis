@@ -16,7 +16,7 @@
       \caption{} \label{fig:1b}
     \end{subfigure}%
 
-\caption{BDQ performances compared to Dueling-Double-DQN on increasing action spaces \label{fig:BDQvsDDQN}}
+\caption{BDQ performances compared to Dueling-Double-DQN with increasing action spaces \label{fig:BDQvsDDQN}}
 \end{figure}
 
 BDQ is our test algorithm. Tavakoli et al. developed BDQ as a variant of Dueling Double DQN \cite{Tavakoli2018}. They aimed to solve the intractability of the DQN algorithm on high dimensional continuous tasks. The key feature of their algorithm is the shared module. The shared module representation allowed the DQN algorithm to cope with the intractability problem. Tavakoli et al. showed that their network could output multi-dimensional actions without convergence issues. They believe the stability of the structure is due to the encoded latent representation of the input in the shared module.

@@ -9,7 +9,7 @@ Optuna outperforms other optimization software with the following points:
     \item Easy to Setup
 \end{itemize}
 
-Define-By-Run interface first coined in the machine learning context. PyTorch surpassed Tensorflow with the help of its dynamic define-by-run API. While in the machine learning framework, Define-By-Run refers to defining the neural network on the go, in hyperparameter optimization, it relates to allowing the user to specify the objective function \cite{optuna_2019}. Optuna takes care of the dynamic construction of the search space. In other words, the user does not need to enter the search space statically.
+Define-By-Run interface is first coined in the machine learning context. PyTorch surpassed Tensorflow with the help of its dynamic define-by-run API. While in the machine learning framework, Define-By-Run refers to defining the neural network on the go, in hyperparameter optimization, it relates to allowing the user to specify the objective function \cite{optuna_2019}. Optuna takes care of the dynamic construction of the search space. In other words, the user does not need to enter the search space statically.
 
 Interface design only defines how users can interact with the software but give no hint about the performance of the underlying algorithm. For a robust hyperparameter optimization framework, a cost-effective pruning system is a must. Optuna adopts a variant of the Asynchronous Successive Halving algorithm to trigger a background call to the 'should-prune' method \cite{Li2018}.
 

@@ -2,3 +2,35 @@
 % Add the above to each chapter to make compiling the PDF easier in some editors.
 
 \chapter{Evaluation}\label{chapter:evaluation}
+
+This section presents the experimental results of three different off-policy RL algorithms, BDQ, DQN, and SAC. Our initial goal by experimenting is to investigate the performance of the BDQ algorithm compared to its predecessor DQN and current state-of-art algorithm SAC on robotics grasping tasks. We want to understand how sensitive is the BDQ algorithm to hyperparameters and how well it explores the given problem. Moreover, most importantly, does the BDQ algorithm scale to high-dimensional action spaces? Through experiments, we aim to gather valuable insights into which kind of RL algorithm performs best on robotics grasping operation.
+
+We tested our implementation of the BDQ algorithm based on a stable-baselines project \footnote{\url{https://github.com/BarisYazici/bdq_sb/tree/master/stable_baselines/bdq}}. All models are trained on the floor scene with a random-urdf object dataset. The RL agents' evaluation is based on the best performing model on the validation set in the floor scene. We examine the robustness of the models on the table scene.
+
+Evaluation runs take 100 episodes long. Sequence, place, and shape of the objects are the same throughout different evaluation runs for different trials. In other words, all models are tested on identical conditions. An episode is considered successful when the gripper lifts an object to a predefined height.
+
+We demonstrate the simplified environment's result and observe the differences between BDQ and DQN and compare it against SAC. Later, we test the same algorithms in the full environment description. We discern the scaling of the algorithms to a larger action space. Moreover, we looked at different perception pipelines' performance by varying the SAC algorithms input type from the encoder to RGBD or raw depth input. We check the importance of each module on the algorithm's success rate in the ablation studies section.  Ablation studies deliver the relative importance of curriculum strategy, normalization, actuator width, and reward to algorithm's overall performance. Finally, we provide specific failure cases for each algorithm
+
+
+\input{chapters/results/simplified.tex}
+\input{chapters/results/full.tex}
+\input{chapters/results/ablation.tex}
+
+
+
+\section{DQN vs. BDQ}
+
+\section{Encoder vs. Raw Sensor Input}
+
+\section{Ablation Studies}
+
+\subsection{Curriculum Strategy}
+
+\subsection{Normalization}
+
+\subsection{Shaped Reward}
+
+\subsection{Actuator Width}
+
+\section{Failure Modes}
+

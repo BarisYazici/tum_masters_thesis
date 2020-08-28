@@ -1,0 +1,23 @@
+\section{Future Work}
+
+\subsection{Transfer to Hardware}
+ 
+In this report, we only tested RL models in simulation environments. Transferring the simulation models to hardware poses new challenges such as sensor noise or robot calibration. Despite the hardware challenges, some prior works achieved the transfer of grasping policy from simulation to hardware. The most notable example comes from Breyer et al.; they applied their best performing simulation model on hardware and delivered a 78\% success rate without any fine-tuning or domain randomization[Cite Breyer]. Another example achieves up to an 88\% success rate in real word grasping evaluation [Kalashnikov]. Our state-of-art SAC model surpasses the result of both prior work in simulation, a natural future extension would be to attempt the sim-2-real transfer.
+ 
+\subsection{Soft Entropy Maximization RL extension of BDQ}
+ 
+BDQ performed head to head compared to the state of the art SAC algorithm in the simplified environment. However, it performed too poorly in the full environment setting. The reason behind this failure is insufficient exploration capability. We believe the advantage of the SAC algorithm over BDQ in the full environment is the maximum entropy RL setting, which provides noble exploration strategies. BDQ algorithm can be extended to adopt maximum entropy RL definition to deliver better exploration strategies.
+ 
+\subsection{}{Multi-Agent Robotic Grasping System}
+ 
+Industrial robots often work multiple at a given problem. Either welding robots or the montage robots work dual or more. Soon the household robots will also work multiple under challenging scenarios. Therefore, an extension to a multi-agent RL framework can bring significantly more degrees of freedom to a robot. 
+\todo{Better below}
+The multi-agent robotic system's training process could be to spawn two or more gripper in the same robotic environment and demand them to solve a task where all robots should work in harmony.
+ 
+\subsection{Automatic Learning of Curriculum Parameters}
+ 
+As mentioned in the discussion section, the curriculum strategy provides a faster convergence to the top performance. At the same time, curriculum strategy brings new hyperparameters to be tuned. Hyperparameter tuning can be time-consuming and complicated. Therefore, we can treat the curriculum parameters as another objective variables to be solved for the optimum values during training. This approach could produce a more remarkable performance without losing time for extra hyperparameter tuning.
+ 
+\subsection{Extension to Soft Objects}
+ 
+In this work, we only considered rigid objects grasping. However, in our daily life, we grasp and manipulate mostly soft or deformable objects such as a plastic water bottle, cloth manipulation, cable insertion, and toy manipulation. The manipulation of those objects differs from their rigid counterparts. They practically demand a more robust algorithm to account for the unexpected changes on the object's surface. With the extension of soft objects, grasp policy would be more realistic in real-world scenarios.

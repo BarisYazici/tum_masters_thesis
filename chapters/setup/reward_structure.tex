@@ -1,0 +1,38 @@
+\section{Reward Structure}
+
+As mentioned in the environment description section, we use different reward definitions for simplified and full environments. Simplified environment definition uses sparse reward, meaning when success, the agent receives 1 otherwise 0. The full environment definition handles the learning with a more sophisticated shaped reward function. 
+Shaped reward function awards both the terminal state and sub-goals such as grasping and lifting the object, whereas it penalizes every spent time before the terminal state. Rewards and time penalty are defined below.
+
+\begin{align*}
+    \text{Terminal Reward: } r_t = 10000 \\
+    \text{Grasping Reward: } r_g = 100 \\
+    \text{\(\Delta\)h Scale Coefficient: } c = 1000 \\
+    \text{Time Penalty: } r_{tp} = 200
+\end{align*}
+
+
+The shape reward function guides the robot to the terminal state by defining sub-goals. Otherwise, the agent may need to spend way too much time to explore the terminal state. In other words, rewards function sets up curriculum-like learning objectives to facilitate the learning. The reward function is given in equation \ref{eq:reward_eqn}. 
+
+\begin{equation}
+    r = (\text{grasp detected}).(r_g + c. \Delta h) - r_{tp}
+    \label{eq:reward_eqn}    
+\end{equation}
+
+
+One needs to pay attention that each state except the terminal state, the step reward should be negative. This condition guarantees the maximum reward the agent receives is linked to reaching the terminal state as soon as possible. If a step reward is positive, the agent will try to stay at that state as long as it can to increase its reward, before going to the terminal. Thus, it contradicts our training goal: the best performing agent collects the objects as soon as possible. The timestep penalty should always be greater than the sum of grasp reward and lifting rewards to avoid the contradictory reward situation. This condition is formalized with the given inequality. Note that the time penalty is a positive number.
+
+\begin{equation}
+ r_{tp} > r_g + c \Delta h
+\end{equation}
+
+\begin{equation}
+    \text{Shaped Reward:}
+    \begin{cases}
+    \text{Grasp}: \begin{cases} \text{Non-Terminal} : r_g + c.\Delta h -r_{tp} \\ 	
+                                \text{Terminal} : r_t - r_{tp}
+    \end{cases} \\
+    \text{No Grasp}: \begin{cases} \text{Non-Terminal} : -r_{tp}\\ 
+                                    \text{Terminal}= \text{Timeout}: -r_{tp} 
+    \end{cases}
+    \end{cases}
+\end{equation}

@@ -11,3 +11,36 @@ Observation from the environment differs as well, based on the task description.
 We used a custom shaped reward function for the environment setting. In the simplified environment, a sparse reward definition was used. \todo{Better}
 
 Curriculum strategy guides the agent to a more challenging environment structure based on the success rate of the agent. In our case, curriculum switch happens both on simplified and full environment definition at a \(70\%\) success rate. This switch triggers an increase of difficulty on the environment’s curriculum parameters such as max object count, object spawned area, and terminating object height.
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.3\linewidth]{figures/freedomDim.png}
+\caption{Full environment freedom of movement} \label{fig:breyer}
+
+\end{figure}
+
+
+\begin{table}[htbp]
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{lllll}
+    \toprule
+     Env. Description     & Action Space & Observation                                           & Reward        & Discount Factor \\ \midrule % \hline
+               Full       & 5            &  \shortstack{Encoder  + \\ Actuator Width or \\ RGBD \\ Depth} & Shaped Reward & 0.99  \\  \midrule % \hline
+               Simplified & 3            & Encoder                                        & Binary Reward & 1.0    \\      %\hline
+    \bottomrule
+\end{tabular}}
+\caption{Different paramters of Simplified and Full environment definitions}
+\end{table}
+
+\begin{table}[htbp]
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{llllll}
+    \toprule
+    Env. Description  & Curr Steps & Curr Success Thresh. & Robot Height & Max Objects & Object Area \\ \midrule
+    Full                    & 8                & 0.7                          & [0.15, 0.25] & [3, 5]       & [0.01, 0.1]  \\ \midrule
+    Simplified              & 4                & 0.7                          & [0.17, 0.27] & [3, 5]       & [0.01, 0.1]  \\ 
+    \bottomrule
+    \end{tabular}}
+    \caption{Curriculum Parameters of Simplified and Full environment descriptions}
+\end{table}
