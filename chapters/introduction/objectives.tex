@@ -1,21 +1,15 @@
 \section{Objectives}
 
-Manipulation of objects is one the most inherent action of the humankind. Humans never stood and plan about how to manipulate an object. 
-It is a natural instict for humans to grab objects in certain ways. Even an infant human can easily manipulate different shapes and colors of objects.
-Manipulation helps us to use tools, gadget to achieve tasks and provide service. 
+Manipulation of objects is one of the most natural action of humankind. Humans never stood and planned about how to manipulate an item. It is an instinct for humans to grab objects in specific ways. Even an infant human can easily manipulate different shapes and colors of objects. Manipulation helps us to use tools, gadgets and provide services. From rehabilitation to service robots, tool usage is vital to enable them to achieve their objective.
 Therefore, manipulation skills will be central for robots of any kind. 
-From rehabilitation to service robots, tool usage is vital to enable them to achieve their objective. Our daily manipulation tasks are shown in figure \ref{fig:x manipulation_skills}.
-For a complicated manipulation task first of all grapsing the object is essential. We need to first firmly grasp a water bottle to drink it.
-Without a firm grasp the safety of the manipulation process is projected to risk. 
+Example of our daily manipulation tasks are shown in figure \ref{fig:x manipulation_skills}.
 
-Nowadays, every kinds of robots are helping us produce in the industry. However, those robots at the manufacture facilities are only capable of doing same repetitive task. 
-The task they are responsible of expands the car manufacturing to high precision microchip producing. On all those tasks robots are extremely efficient and precise. 
-On the other hand, if a the car company decides to manufacture a new model of car with a slightly different chasis the whole process needs to be changed and program of the robots needs to be hardcoded from zero.
-Hardcoding every move of the robot in a slight change of a task is fundementally opposes the very nature of the robots. 
-Main objective of this master's thesis is to enable robotic manipulators to incrementally learn to grasp tools and generalize the learned policy to unseen objects.
-Rather than overfitting to a certain set of objects, we measure the success rate on unseen dataset. 
-This preassumption promises a robust actor that can adapt well on unseen object and environments.
+For a complicated manipulation task, first of all, grasping the object is essential. We need first firmly to grab a water bottle to drink it.
+Without a firm grasp, the manipulation process will not be safe. 
+Nowadays, every kind of robot is helping us produce in the industry. The task robots are responsible for expands from the car manufacturing to high precision microchip producing. On all those tasks, robots are incredibly efficient and precise. However, these tasks' common denominator is that they are repetitive and specialized in a specific process. If a car company decides to manufacture a new car model, the whole process may need to be changed, and the robot's program needs to be hardcoded from zero. Eventually, we want to avoid this redundant task of programming all from zero each time we change the process.
 
+This master's thesis's main objective is to enable robotic 
+manipulators to incrementally learn to grasp tools and generalize the learned policy to unseen objects. This procedure promises a robust gripper that can adapt well to unseen objects and environments.. Moreover, rather than hardcoding robot's every move, we take another approach, that the robot learns by itself based on the observation and rewards it receives from the simulation environment. We vision that through learning-based methods, robots will learn to extrapolate their knowledge to unknown objects and processes \ref{fig:graspseq}.
 
 \begin{figure}[htbp]
     \centering
@@ -23,3 +17,34 @@ This preassumption promises a robust actor that can adapt well on unseen object 
     \caption{Different manipulation skill adopted to robotic manipulators \cite{Kroemer2019}}
     \label{fig:x manipulation_skills}
 \end{figure}
+
+% \begin{figure}[!htbp]
+%   \begin{subfigure}{0.49\textwidth}
+%       \includegraphics[width=\linewidth]{figures/newfloor}
+%       \caption{Grasp sequence in floor scene} \label{fig:table}
+%   \end{subfigure}%
+%   \hspace*{\fill}   % maximize separation between the subfigures
+%   \begin{subfigure}{0.49\textwidth}
+%       \includegraphics[width=\linewidth]{figures/newtable}
+%       \caption{Grasp sequence in table scene} \label{fig:floor}
+%   \end{subfigure}%
+%   \hspace*{\fill}   % maximize separation between the subfigures    
+%   \caption{ Our robot model performs grasping on floor and table scene\label{fig:graspseq}}
+% \end{figure}
+
+
+
+\begin{figure}[htbp]
+  \centering
+    \includegraphics[width=1.\textwidth]{figures/newtable}
+  % \caption{Different manipulation skill adopted to robotic manipulators \cite{Kroemer2019}}
+  % \label{fig:x manipulation_skills}
+  \caption{ Our robot model performs grasping on floor and table scene\label{fig:graspseq}}
+\end{figure}
+
+% \begin{figure}[htbp]
+%   \centering
+%     \includegraphics[width=1.\textwidth]{figures/newfloor}
+%   \caption{Different manipulation skill adopted to robotic manipulators \cite{Kroemer2019}}
+%   \label{fig:x manipulation_skills}
+% \end{figure}
