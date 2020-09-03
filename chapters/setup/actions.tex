@@ -13,7 +13,7 @@ There are two parts to the action definition. One part defines an interface with
 \end{lstlisting}
 
 
-It defines the action type and the shape of the action. This definition is later processed by the RL algorithm to output an action based on what the environment expects. Our environment takes only continuous actions. However, to try the DQN algorithm, which output only discrete, we linearly discretized the environment. Based on the discretization padding given in the configuration file, we define the size of the discrete action space. For instance, if the discretization padding is three for each action dimension, and if the simplified environment is set, we would have nine actions. Since the simplified environment has three actions dimension and three actions padding for each action makes up in a total of nine actions. The below diagram presents the linear action discretization \ref{fig:disc}.
+It defines the action type and the shape of the action. This definition is later processed by the RL algorithm to output an action based on what the environment expects. Our environment takes only continuous actions. However, we linearly discretized the environment to comply with the DQN algorithm's discrete action space. Based on the discretization padding given in the configuration file, we define the size of the discrete action space. For instance, if the discretization padding is three for each action dimension, and if the simplified environment is set, we would have nine actions. Since the simplified environment has three actions dimension and three actions padding for each action makes up in a total of nine actions. The below diagram presents the linear action discretization \ref{fig:disc}.
 
 \begin{figure}[htbp]
     \centering
@@ -22,4 +22,4 @@ It defines the action type and the shape of the action. This definition is later
     \label{fig:disc}
 \end{figure}
 
-As mentioned in Stable-Baselines documentation \footnote{\url{https://bit.ly/2PYe5hG}} continuous actions algorithms work best when the action space is defined symmetric and between -1 and 1. Therefore, we need to rescale the actions in the environment side to fit the maximum action limits. This problem does not appear on the discrete action space because we already receive the action index from the DQN algorithm and can easily assign it to the respective values.
+As mentioned in Stable-Baselines documentation \footnote{\url{https://bit.ly/2PYe5hG}} continuous actions algorithms work best when the action space is defined symmetric and between -1 and 1. Therefore, we need to rescale the actions in the environment side to fit the maximum action limits. This problem does not appear in the discrete action space because we already receive the action index from the DQN algorithm and can easily assign it to the respective values.

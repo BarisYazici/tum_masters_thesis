@@ -1,10 +1,10 @@
 \section{Policy-Based RL}
 
-Policy-based solutions directly parameterize the policy to find the optimal policy which returns the highest reward. These approaches proved to be more stable than Value-based counterparts. One reason behind stability is that actions are sampled from the continuous policy parameterization function, which outputs smooth action probabilities \cite{Sutton2018}. Similar to Value-based methods, policy-based RL also aims to solve the RL problem only with sampling in model-free fashion.
+Policy-based solutions directly parameterize the policy to find the optimal policy which returns the highest reward. These approaches proved to be more stable than Value-based counterparts. One reason behind stability is that actions are sampled from the continuous policy parameterization function, which outputs smooth action probabilities \cite{Sutton2018}. Similar to Value-based methods, policy-based RL also aims to solve the RL problem only with sampling in a model-free fashion.
 
 \subsection{Policy Gradient}
 
-Policy gradient methods incorporate stochastic gradient ascent on policy objective function. This update optimizes the theta parameters of the policy. Unlike DQN, policy gradient methods perform each update in on-policy fashion. It uses only the experiences taken under the particular policy to update the parameters of this policy \cite{SpinningUp2018}.
+Policy gradient methods incorporate stochastic gradient ascent on policy objective function. This update optimizes the \(\theta\) parameters of the policy. Unlike DQN, policy gradient methods perform each update in on-policy fashion. It uses only the experiences taken under the particular policy to update the parameters of this policy \cite{SpinningUp2018}.
 
 \begin{align}
     \nabla J(\theta) \propto \sum\limits_s \mu(s) \sum\limits_a q_{\pi}(s,a)\nabla \pi(a | s, \theta)\\

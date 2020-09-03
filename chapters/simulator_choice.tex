@@ -4,9 +4,9 @@
 \chapter{Simulator Choice}
 
 
-Simulator choice was the first important architecture decision we made, because it influences the whole software architecture. Simulator lays the groundwork of the robotics environment implementation. 
-Especially for continuous control optimization tasks, accurate simulation plays a significant role in the performance of the controller. As Todorov et al. indicated, if the simulation is not accurate enough, an optimization algorithm will find a way to exploit it \cite{Todorov2012}.
-We compared three states of art simulators: Mujoco\footnote{\url{http://www.mujoco.org/}}, Gazebo\footnote{\url{http://gazebosim.org/}}, and Pybullet\footnote{\url{https://pybullet.org/}}. Each simulator comes with advantages and drawbacks. Our decision is based on the factors: active support, community, stability, scalability, and ease of use. It is important to note that our analysis includes subjective factors such as ease of use, documentation coverage, and tutorials quality. Although we tried our best to ground our points on facts, subjective criteria include a certain amount of personal preferences. 
+Simulator choice was the first important architecture decision we made because it influences the whole software architecture. Simulator lays the groundwork of the robotics environment implementation. 
+Especially for continuous control optimization tasks, accurate simulation plays a significant role in the controller's performance. As Todorov et al. indicated, if the simulation is not accurate enough, an optimization algorithm will find a way to exploit it \cite{Todorov2012}.
+We compared three states of art simulators: Mujoco\footnote{\url{http://www.mujoco.org/}}, Gazebo\footnote{\url{http://gazebosim.org/}}, and Pybullet\footnote{\url{https://pybullet.org/}}. Each simulator comes with advantages and drawbacks. Our decision is based on active support, community, stability, scalability, and ease of use. It is important to note that our analysis includes subjective factors such as ease of use, documentation coverage, and tutorials quality. Although we tried our best to ground our points on facts, subjective criteria include certain personal preferences. 
 
 \input{chapters/simulator_choice/mujoco.tex}
 

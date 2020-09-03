@@ -2,17 +2,15 @@
 
 We have two testbed environments: one with the simplified task description and the full task description. We primarily use the simplified environment to test and prune the algorithms quickly. If the model solves the simplified environment, we move forward to try it in the full environment. Those two descriptions deviate in terms of action, observation, reward, and curriculum definition \ref{tab:envpars}, \ref{tab:currpars}. 
 
-The simplified environment has fewer action dimensions to control compare to the full environment. A total of three-dimensional action controls the x, y coordinates translation, and yaw rotation. Hence, every timestep it receives a fixed size of downward z-axis movement. Similar to Quillen et al. and Breyer et al., our gripper also automatically closes when it reaches a certain height threshold.
+The simplified environment has fewer action dimensions to control compared to the full environment. A total of three-dimensional action controls the x, y coordinates translation, and yaw rotation. Hence, every timestep it receives a fixed size of downward z-axis movement. Similar to Quillen et al. and Breyer et al., our gripper also automatically closes when it reaches a certain height threshold.
 
-The full environment, on the other hand, has full control over all dimensions. The gripper receives five-dimensional action to control cartesian coordinates (x, y, z), yaw rotation, and the gripper open/close in the full environment. 
+The full environment, on the other hand, has full control over all dimensions. The gripper receives five-dimensional action to control cartesian coordinates x, y, z, yaw rotation, and the gripper open/close in the full environment. 
 
-Observation from the environment differs as well, based on the task description. In the simplified scenario agent only receives the hundred-dimensional encoded depth image. Whereas, in the full scenario, the agent gets the actuator width and the hundred-dimensional encoder output. [\todo{yaz bir seyler daha} ]
+Observation from the environment differs as well, based on the task description. In the simplified scenario agent only receives the hundred-dimensional encoded depth image. Whereas, in the full scenario, the agent gets the actuator width and the hundred-dimensional encoder output.
 
-We used a custom shaped reward function for the environment setting. In the simplified environment, a sparse reward definition was used. \todo{Better}
+We used a custom shaped reward function for the environment setting. In the simplified environment, a sparse reward definition was used.
 
-Curriculum strategy guides the agent to a more challenging environment based on the agent's success rate. In our case, curriculum switch happens both on simplified and full environment definition at a \(70\%\) success rate. This switch triggers an increase of difficulty on the environment's curriculum parameters such as max object count, object spawned area, and terminating object height. More detailed information given in the below table in \ref{tab:currpars}
-
-\todo{Explain Curr Tables}
+Curriculum strategy guides the agent to a more challenging environment based on the agent's success rate. In our case, curriculum switch happens both on simplified and full environment definition at a \(70\%\) success rate. This switch triggers an increase of difficulty on the environment's curriculum parameters such as max object count, object spawned area, and terminating object height. More detailed information regarding the curriculum parameters is given in the below table in \ref{tab:currpars}
 
 \begin{figure}[htbp]
     \centering
