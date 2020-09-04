@@ -1,10 +1,10 @@
 \section{Ablation Studies}
 
-In ablation studies, we investigated the individual importance of the following modules: Curriculum Strategy, input and reward normalization, actuator-width information, and the shaped reward. All ablation study experiments were carried with the SAC algorithm with depth perception and one million experience replay buffer size. All pieces of training took place in the full environment floor scene. We shared the results of ablation studies in the same table as the SAC full environment \ref{table:SACfull}.
+In ablation studies, we investigated the individual importance of the following modules: curriculum strategy, input and reward normalization, actuator-width information, and the shaped reward. All ablation study experiments were carried with the SAC algorithm with depth perception and one million experience replay buffer size. All training trials took place in the full environment floor scene. We shared the results of ablation studies in the same table as the SAC full environment \ref{table:SACfull}.
 
-Among all ablation variants, only no normalization trials did not provide a working grasp policy. The rest either converged to a lower success rate or converged relatively slower than the baseline. 
+Among all ablation variants, only no normalization trial did not provide a working grasp policy. The rest either converged to a lower success rate or converged relatively slower than the baseline. 
 
-Sparse reward and no curriculum learning trials converged to the same success rate with a bit of delay than the baselines. Sparse reward and without curriculum learning converged after 20 thousand timesteps and 400 thousand time steps, respectively. Interestingly, sparse reward SAC agent performed the best in the table scene on random objects with a 100\% success rate. Both sparse and no curriculum learning trials performed better than the baseline SAC model on wooden blocks in the table scene. Sparse reward and no curriculum learning achieved 72\% and 64\%, while baseline reached 23\%.
+Sparse reward and no curriculum learning converged 20 thousand timesteps and 400 thousand timesteps after the baselines. Interestingly, sparse reward SAC agent performed the best in the table scene, on random objects with a 100\% success rate. Both sparse and no curriculum learning trials performed better than the baseline SAC model on wooden blocks in the table scene. Sparse reward and no curriculum learning achieved 72\% and 64\%, while baseline reached 23\%.
 
 No actuator width observation converged to a slightly worse success rate than the baseline.  It achieved a 97\% success rate, while the baseline converged to 99\%. An extra observation related to the environment proved to be useful.
 

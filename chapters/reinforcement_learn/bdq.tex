@@ -21,7 +21,7 @@
 
 BDQ is our test algorithm. Tavakoli et al. developed BDQ as a variant of Dueling Double DQN \cite{Tavakoli2018}. They aimed to solve the intractability of the DQN algorithm on high dimensional continuous tasks. The key feature of their algorithm is the shared module. The shared module representation allowed the DQN algorithm to cope with the intractability problem. Tavakoli et al. showed that their network could output multi-dimensional actions without convergence issues. They believe the structure's stability is due to the encoded latent representation of the input in the shared module.
 
-Their results stress that, especially in higher dimensional action spaces, BDQ performs better than Double-dueling DQN implementation \ref{fig:BDQvsDDQN}. Even compared to proven algorithms, like DDPG, it cannot reach the level of BDQ. Although researchers at Google DeepMind presented in 2016 that the DDPG algorithm outperforms DQN variants at almost every task \cite{Lillicrap2016}, Tavakoli et al. proved the opposite that BDQ shows better performance than DDPG on the Humanoid walking benchmark task \ref{fig:bdqvsddpg}.
+Their results stress that, especially in higher dimensional action spaces, BDQ performs better than Double-dueling DQN implementation \ref{fig:BDQvsDDQN}. Even compared to proven algorithms, like DDPG, BDQ performs better. Although researchers at Google DeepMind presented in 2016 that the DDPG algorithm outperforms DQN variants at almost every task \cite{Lillicrap2016}, Tavakoli et al. proved the opposite that BDQ shows better performance than DDPG on the Humanoid walking benchmark task \ref{fig:bdqvsddpg}.
 
 \begin{figure}[htbp] 
     \centering
@@ -45,7 +45,7 @@ In this section, we will go through the implementation details of BDQ. The autho
 
 BDQ adopts new improvements from the DQN algorithm, such as double-q function, dueling architecture, prioritized replay. One crucial design decision is that while advantage functions are unique to every stream of actions, they kept the same state-value estimation for each action branch in  \ref{fig:bdq_net}. Later they combined the common state-value estimate and the advantage function in the aggregation layer. This approach helps with the generalization of similar states' actions by reducing the overfitting of action branches. Therefore, they can scale up to more complex and higher dimensional tasks, where Dueling-Double DQN becomes intractable.
 
-Another key difference of BDQ is the aggregation layer; they subtract the mean advantage value from the individual branch's advantage value. Then, sum up the result to calculate the Q-function value of each branch, shown in \ref{eq:bdq_better}. Although the lack of identifiability problem, they achieve better results than the theoretically proven max reduction method(\ref{eq:bdq_proven}).
+Another key difference of BDQ is the aggregation layer; they subtract the mean advantage value from the individual branch's advantage value. Then, sum up the result to calculate the Q-function value of each branch, shown in \ref{eq:bdq_better}. Although the lack of identifiability problem exists, they achieve better results than the theoretically proven max reduction method(\ref{eq:bdq_proven}).
 
 \begin{equation}
     Q_d(s, a_d) = V(s) + \Big(A_d(s, a_d) - \frac{1}{n} \sum\limits_{a_d'\in A_d}A_d(s, a_d')\Big)
@@ -79,7 +79,7 @@ Analogous to the TD-target definition, they express loss differently than the DD
     \label{eq:bdq_loss}
 \end{equation}
 
-The exploration-exploitation trade-off is still an on-going research in RL. Nevertheless, researchers assume that better-exploring algorithms have an edge over weakly exploring algorithms. SAC with a robust entropy-based exploration approach, considered to be the best exploring algorithm and the state-of-art RL algorithm \cite{Haarnoja2018}. BDQ original code offers two different exploration approach, epsilon greedy and gaussian noise. Since epsilon-greedy usually used with discrete DQN based algorithms, the authors found it inadequate to explore continuous spaces. Instead of epsilon-greedy, they recommended the use of Gaussian-noise for better performance.
+The exploration-exploitation trade-off is still an on-going research in RL. Nevertheless, researchers assume that better-exploring algorithms have an edge over weakly exploring algorithms. SAC with a robust entropy-based exploration approach, considered to be the best exploring algorithm and the state-of-art RL algorithm \cite{Haarnoja2018}. BDQ original code offers two different exploration approach, epsilon greedy and Gaussian noise. Since epsilon-greedy usually used with discrete DQN based algorithms, the authors found it inadequate to explore continuous spaces. Instead of epsilon-greedy, they recommended the use of Gaussian noise for better performance.
 
 BDQ follows the same pseudocode of double-DQN(\ref{fig:bdqalgo}) with dueling and branching network extensions.
 

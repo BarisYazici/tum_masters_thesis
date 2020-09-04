@@ -3,11 +3,11 @@
 
 In the full environment description, we generally evaluated the performance of variants of the SAC algorithm. We tested with different perception pipeline, different reward definition, and buffer size. Contrary to the simplified environment, we verified the algorithm's robustness on the wooden block object database.
 
-We tested four variations of the SAC model in the full environment: encoder with 50k buffer size, encoder with 1m buffer size, depth with 1m buffer size, and RGBD with 1m buffer size. Among these models, the encoder 1m buffer achieved the best transfer result. It performed with 99\% and 82\% with random objects and wooden blocks in the table scene \ref{table:SACfull}. Nevertheless, training plots demonstrate that the encoder training process has more variance than the depth counterpart. Moreover, depth perception converges a higher success rate than encoder perception during training, as shown in the plot \ref{fig:percep}.
+We tested four variations of the SAC model in the full environment: encoder with fifty thousand buffer size, encoder with one million buffer size, depth with one million buffer size, and RGBD with one million buffer size. Among these models, the encoder one million buffer achieved the best transfer result. It performed with 99\% and 82\% with random objects and wooden blocks in the table scene \ref{table:SACfull}. Nevertheless, training plots demonstrate that the encoder training process has more variance than the depth counterpart. Moreover, depth perception converges a higher success rate than encoder perception during training, as shown in the plot \ref{fig:percep}.
 
-Like the simplified environment results, we also found that in the full environment, 1m buffer size performs better and accumulates less variance than the 50k buffer. As represented in the plot \ref{fig:encbuffer}, the 50k buffer version has more variance and converges to only a 90\% training success rate. In comparison, the 1m buffer size version subjected to less variance and converges around a 97\% success rate.  
+Like the simplified environment results, we also found that in the full environment, one million buffer size performs better and accumulates less variance than the fifty thousand buffer. As represented in the plot \ref{fig:encbuffer}, the fifty thousand buffer version had more variance and converged to only a 90\% training success rate. In comparison, the one million buffer size version accumulated less variance and converged around a 97\% success rate.  
 
-Unexpectedly, depth perception also performs better than the RGBD. RGBD perception delivered the worst results among perception types. It fell to a 91\% test success rate even in the floor scene. In the same scene, depth perception achieved a 100\% test success rate. RGBD plot in figure \ref{fig:depthvsrgbd} also shows sudden changes which bring high variance. Nevertheless, it still managed to converge to a 99\% success rate.
+Unexpectedly, depth perception also performed better than the RGBD. RGBD perception delivered the worst results among perception types. It converged to a 91\% test success rate even in the floor scene. In the same scene, depth perception achieved a 100\% test success rate. RGBD plot in figure \ref{fig:depthvsrgbd} also shows sudden changes, a sign of high variance. Nevertheless, it still converged to a 99\% success rate.
 
 Unfortunately, BDQ never delivered a working policy for the full environment. Its learning plot \ref{fig:bdq} also shows the severe decay to a 0\% success rate.
 
@@ -55,6 +55,6 @@ Unfortunately, BDQ never delivered a working policy for the full environment. It
 \begin{figure}[!htbp]
     \centering
         \includegraphics[width=0.7\textwidth]{figures/SACfull/SAC_rgbd_vs_depth}
-    \caption{SAC performance RGBD vs. Depth. Shaded region represents the variance.}
+    \caption{SAC performance RGBD vs. Depth. Shaded region represents the standard deviation.}
     \label{fig:depthvsrgbd}
 \end{figure}

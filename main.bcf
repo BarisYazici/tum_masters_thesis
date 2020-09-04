@@ -2216,23 +2216,22 @@
     <bcf:citekey order="94">Bengio2009</bcf:citekey>
     <bcf:citekey order="95">Sanger1994</bcf:citekey>
     <bcf:citekey order="96">Sanger1994</bcf:citekey>
-    <bcf:citekey order="97">Karpathy2012</bcf:citekey>
-    <bcf:citekey order="98">Breyer2018</bcf:citekey>
+    <bcf:citekey order="97">Breyer2018</bcf:citekey>
+    <bcf:citekey order="98">Karpathy2012</bcf:citekey>
     <bcf:citekey order="99">Karpathy2012</bcf:citekey>
-    <bcf:citekey order="100">Karpathy2012</bcf:citekey>
+    <bcf:citekey order="100">Breyer2018</bcf:citekey>
     <bcf:citekey order="101">Breyer2018</bcf:citekey>
     <bcf:citekey order="102">Breyer2018</bcf:citekey>
-    <bcf:citekey order="103">Breyer2018</bcf:citekey>
-    <bcf:citekey order="104">openai2019rubiks</bcf:citekey>
-    <bcf:citekey order="105">Breyer2018</bcf:citekey>
-    <bcf:citekey order="106">Kalashnikov2018</bcf:citekey>
-    <bcf:citekey order="107">Tavakoli2018</bcf:citekey>
-    <bcf:citekey order="108">Lillicrap2016</bcf:citekey>
-    <bcf:citekey order="109">Kalashnikov2018</bcf:citekey>
-    <bcf:citekey order="110">Quillen2018</bcf:citekey>
-    <bcf:citekey order="111">Sutton2018</bcf:citekey>
-    <bcf:citekey order="112">Breyer2018</bcf:citekey>
-    <bcf:citekey order="113">Kalashnikov2018</bcf:citekey>
+    <bcf:citekey order="103">openai2019rubiks</bcf:citekey>
+    <bcf:citekey order="104">Breyer2018</bcf:citekey>
+    <bcf:citekey order="105">Kalashnikov2018</bcf:citekey>
+    <bcf:citekey order="106">Tavakoli2018</bcf:citekey>
+    <bcf:citekey order="107">Lillicrap2016</bcf:citekey>
+    <bcf:citekey order="108">Kalashnikov2018</bcf:citekey>
+    <bcf:citekey order="109">Quillen2018</bcf:citekey>
+    <bcf:citekey order="110">Sutton2018</bcf:citekey>
+    <bcf:citekey order="111">Breyer2018</bcf:citekey>
+    <bcf:citekey order="112">Kalashnikov2018</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="none/global/" type="entry" sortscheme="none" sortnamekeyscheme="global" labelprefix="">
   <bcf:sorting>

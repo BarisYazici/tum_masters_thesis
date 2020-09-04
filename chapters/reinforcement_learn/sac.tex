@@ -3,7 +3,7 @@
 
 SAC algorithm is described as the state-of-art algorithm as of 2020 \cite{stable-baselines}. Therefore, we chose SAC as our baselines algorithm to compare against the BDQ. SAC is an actor-critic, model-free algorithm. Actor critic refers to the optimization of both policy and value function. Model-free nature stems from the sample based update structure. The success of SAC lies in low sample complexity and robustness to different hyperparameters \cite{Haarnoja2018}. SAC achieved this success due to; actor-critic architecture, entropy maximization, and off-policy update structure.
 
-\todo{elaborate more on actor-critic}
+% \todo{elaborate more on actor-critic}
 
 Actor-critic architectures have long been used in RL literature \cite{Konda2000}. \cite{Haarnoja2018}. The actor-critic's core idea is optimizing the policy and value functions separately but combining them during the policy iteration part of the RL algorithm. The policy function is responsible for the policy evaluation, while the value function is responsible for policy improvement.
 
@@ -17,7 +17,7 @@ Actor-critic architectures have long been used in RL literature \cite{Konda2000}
     H(X) = \mathop{\mathbb{E}}_X [I(x)] = -\sum\limits_{x \in X} p(x)\log p(x)
 \end{equation}
 
-Off-policy, algorithms are naturally better at working in the sparse data region because they can incorporate past experiences or use state-action-rewards pairs from different policies.  Albeit the off-policy approach brings high variance into the learning process, new papers overcome this problem with Polyak-Rupper averaging or adaptively setting the step size of the stochastic gradient descent optimizer \cite{Sutton2018}.
+Off-policy, algorithms are naturally better at working in the sparse data region because they can incorporate past experiences and use state-action-rewards pairs from different policies.  Albeit the off-policy approach brings high variance into the learning process, new papers overcome this problem with Polyak-Rupper averaging or adaptively setting the step size of the stochastic gradient descent optimizer \cite{Sutton2018}.
 
 \subsection{SAC Implementation as Baseline Algorithm}
 

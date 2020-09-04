@@ -31,7 +31,9 @@ The analytical approach has been introduced first by Nguyen. He tried to solve t
 \subsection{Empirical Grasping Approach}
 
 
-The empirical grasping approach was introduced to overcome the difficulties faced with the analytical grasping approach. Empirical methods include learning, which is based on sampling and training. Some examples of empirical grasping approaches are imitating a human teacher \cite{Ekvall2004}, learning from the handcrafted features \cite{Saxena2008},  and deep reinforcement learning (RL) technique to learn close-loop dynamic visual grasping strategies \cite{Kalashnikov2018}. Imitating a human teacher can quickly learn the demonstrated training data. However, it has difficulties to scale to the novel objects, which were not seen during the training \cite{Sahbani2012}. Saxena et al.'s technique to learn from the feature effectively generalizes to unseen objects, but it fails to choose the best grasp for a particular task \cite{Sahbani2012}. RL approaches learn a thorough grasp of an object based on a definition of a goal. Thus, the learned grasp of an object is already linked to the task's goal. The flexibility of RL made itself attractive among grasping researchers. One disadvantage of the RL approach is that it requires a considerable amount of data to train. Although recent applications introduced randomization for sim-to-real transfer of the models \cite{Andrychowicz2020}, it still has difficulties to perform reliably in the real-world \cite{Caldera2018}.
+The empirical grasping approach was introduced to overcome the difficulties faced with the analytical grasping approach. Empirical methods include learning, which is based on sampling and training. Some examples of empirical grasping approaches are imitating a human teacher \cite{Ekvall2004}, learning from the handcrafted features \cite{Saxena2008},  and deep reinforcement learning (RL) technique to learn close-loop dynamic visual grasping strategies \cite{Kalashnikov2018}. Imitating a human teacher can quickly learn the demonstrated training data. However, it has difficulties to scale to the novel objects, which were not seen during the training \cite{Sahbani2012}. Saxena et al.'s technique to learn from the feature effectively generalizes to unseen objects, but it fails to choose the best grasp for a particular task \cite{Sahbani2012}. 
+
+RL approaches learn a thorough grasp of an object based on a definition of a goal. Thus, the learned grasp of an object is already linked to the task's goal. The flexibility of RL made itself attractive among grasping researchers. One disadvantage of the RL approach is that it requires a considerable amount of data to train. Although recent applications introduced randomization for sim-to-real transfer of the models \cite{Andrychowicz2020}, it still has difficulties to perform reliably in the real-world \cite{Caldera2018}.
 
 \section{Learning applications on grasping}
 
@@ -43,7 +45,7 @@ Lenz et al. propose a five parameters model trained by supervised learning from 
 
 Their cascaded network architecture bypasses the need for handcrafted features. After training, the first layer network learns low-level features and delivers possible naïve grasping candidates, and the second layer chooses the top-ranked grasping candidate \ref{fig:deeplearngrasp}.
 
-Although they achieved up to \(90\%\) success rate on grasping lab tools, this method is limited to only parallel plate gripper. It does not generalize to use another gripper type, unless the dataset is entirely updated for that gripper. Besides data collection process is time-consuming and biased.
+Although they achieved up to \(90\%\) success rate on grasping lab tools, this method is limited to only parallel plate gripper. It does not generalize to use other gripper types, unless the dataset is entirely updated for these grippers. Besides data collection process is time-consuming and biased.
 
 \begin{figure}[htbp]
     \centering
