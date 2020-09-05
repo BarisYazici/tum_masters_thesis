@@ -22,13 +22,13 @@ The fundamental elements of MDP are as follows:
 The action process follows; the agent acts on the environment at time t, and the environment returns the reward and state of the action at time \(t+1\). Based on the state of the environment at the \(t+1\) agent makes another action \(A_{t+1}\), which results in \(R_{t+2}\) and \(S_{t+2}\).
 
 In every MDP system, agents should be reachable to every other states through a sequence of actions. The transition between states is of great value for the MDP framework.
-One can compute the transition probability in MDP, given the inner dynamics of the environment \cite{Sutton2018}. The below equation defines the internal dynamics probability. It tells how probable it is to end up in state s’ with reward r by taking action a in state s. 
+One can compute the transition probability in MDP, given the inner dynamics of the environment \cite{Sutton2018}. The below equation defines the internal dynamics probability. It tells how probable it is to end up in state \(s'\) with reward \(r\) by taking action \(a\) in state \(s\). 
 
 \begin{equation}
     p(s',r | s,a) = Pr\{S_t = s', R_t = r | S_{t-1} = d, A_{t-1} = a\}
 \end{equation}
 
-One can calculate the transition probability function from the inner dynamics’ probability function.
+One can calculate the transition probability function from the inner dynamics' probability function.
 
 \begin{equation}
     p(s'|s,a) = Pr\{S_t=s'| S_{t-1}=s, A_{t-1}=a\} = \sum_{r \in R}p(s',r|s,a)
