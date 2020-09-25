@@ -1,4 +1,4 @@
-\subsection{Mujoco}
+\section{Mujoco}
 
 Mujoco is released in 2015, making it the newest physics engine in our comparison. It stands for Multi-Joint Control. Hence the name, its primary purpose is Robot simulation.
  
@@ -12,7 +12,7 @@ We first considered Mujoco as our main simulator. Our consideration was based on
 \end{figure}
 
 
-On the other hand, MuJoCo requires a license to use for research purposes. Personal non-commercial license costs \(500\$\) as of 2020 July. License cost is the main drawback because we prefer complete open-source software. Another factor is the training time; since our models require over 10M time-steps to train, we need to use every millisecond time gain in every step. So, GPU support is highly crucial. Mujoco only supports CPU simulation, which has the potential to be slower than GPU. As a side-note, we have not compared the MuJoCo CPU version speed with Bullet GPU version speed. MuJoCo developers prepared a performance page where they explain the GPU vs. CPU comparison. They pointed out that if decoupled systems are simulated like particle simulation, GPU has an advantage. Whereas, one simulates coupled system such as a humanoid robot CPU gain a slight edge \ref{fig:mujococpu}. They also noted that there is room for research in the areas besides coupled or decoupled systems\footnote{\url{http://mujoco.org/performance.html}}.
+On the other hand, MuJoCo requires a license to use for research purposes. Personal non-commercial license costs \(500\$\) as of 2020 July. License cost is the main drawback because we prefer complete open-source software. Another factor is the training time; since our models require over 10M time-steps to train, we need to use every millisecond time gain in every step. So, GPU support is highly crucial. Mujoco only supports CPU simulation, which has the potential to be slower than GPU. As a side-note, we have not compared the MuJoCo CPU version's speed against Bullet GPU version. MuJoCo developers prepared a performance page where they explain the GPU vs. CPU comparison. They pointed out that if decoupled systems are simulated like particle simulation, GPU has an advantage. Whereas, on simulations with coupled system such as a humanoid robot, CPU gains a slight edge \ref{fig:mujococpu}. They also noted that there is a room for research in the areas besides coupled or decoupled systems\footnote{\url{http://mujoco.org/performance.html}}.
 
 \begin{figure}[htbp]
     \centering
