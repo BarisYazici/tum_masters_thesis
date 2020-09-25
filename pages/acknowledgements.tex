@@ -1,0 +1,30 @@
+\makeatletter
+\ifthenelse{\pdf@strcmp{\languagename}{english}=0}
+{\addcontentsline{toc}{chapter}{Acknowledgments}}
+{\addcontentsline{toc}{chapter}{Danksagungen}}
+\makeatother
+\thispagestyle{empty}
+
+\vspace*{20mm}
+
+\begin{center}
+\makeatletter
+\ifthenelse{\pdf@strcmp{\languagename}{english}=0}
+{\usekomafont{section} Acknowledgments}
+{\usekomafont{section} Danksagungen}
+\makeatother
+\end{center}
+
+\vspace{10mm}
+
+%TODO: Acknowledgments
+I want to thank:
+\begin{itemize}
+    \item Mahmoud Akl for allowing me to pursue my thesis in this area, and for his wise advice and constructive suggestions. 
+    \item Michel Breyer for sharing his precious insights in robotics area.
+    % \item Roboy team for allowing me to use their Google cloud platform
+    \item My mom, father, and sister for their constant love and support throughout my master's degree
+    % \item My friends at Biederstein, for encouraging me in every phase of my master's thesis.
+\end{itemize}
+
+\cleardoublepage{}

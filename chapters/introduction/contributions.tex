@@ -1,0 +1,41 @@
+\section{Contribution}
+
+\begin{enumerate}
+    \item \textbf{Testing the BDQ algorithm in grasping setup} - Recently developed BDQ algorithm promises to solve DQN's intractability problem. The novel action branching architecture proved to learn complex humanoid walking, hopper, and walker 2d tasks \cite{Tavakoli2018}. Although these tasks are complex and have high action-space dimensionality, they are similar by nature. Our grasping gym benchmark environment demands a novel exploration strategy and poses new challenges that are entirely different from walking tasks. In this respect, our work provides the first test of the BDQ algorithm in robotic grasping operation.
+
+    \item \textbf{Grasping Gym benchmark tasks} - Default gym benchmark tasks do not cover the whole spectrum of robotic manipulation. For instance, OpenAI gym provides pick and place, push, reach, and manipulate block tasks; all goal-based \cite{OpenAIgym}. Those tasks aim to solve the problem only by reaching the goal position. In contrast, our gym benchmark environment targets to provide the most generalized grasp policy. We aim not only the best performing model in the current model but the best model to generalize to new objects and scenes. That is why we implemented two scenes: Floor and table. We conduct our training in the floor scene, and in the table scene, we test the robustness of the trained model. We also use an entirely new wooden blocks dataset from Breyer et al.'s work \cite{Breyer2018}. Indeed, tests with wooden blocks proved to be the toughest of all. 
+
+    \item \textbf{Raw depth perception} - Perception is the most crucial input for an RL agent. We compared the agent's performance with three different observation types: Breyer et al. 's autoencoder implementation as a baseline, novel raw depth, and RGBD perception pipeline. We compare these two new observation types against autoencoder implementation from Breyer et al. We provide a straightforward interface to change between different observation types.
+
+    \item \textbf{BDQ implementation based on Stable-Baselines} - The original BDQ algorithm is implemented based on OpenAI baselines. Currently, Stable-baselines, a fork of OpenAI baselines, presents more features and support for users. Whenever a user files an issue, they answer it less than a day. Apart from the support, their codebase is simpler to understand and debug \cite{stable-baselines}. Thus, as soon as, we encountered problems with the original BDQ code, we began the reimplementation based on stable-baselines. Our repository is hosted at Github \footnote{\url{https://bit.ly/31TMzst}} as an open-source MIT licensed project.
+
+    \item \textbf{State-of-art grasping score with SAC algorithm} - Although our primary goal is to test the BDQ's performance on high dimensional action-spaces, we observed that SAC performs nearly perfectly in the grasping environment. SAC model surpassed all previously tested algorithms in the grasping research area with 100\% test set performance
+    
+    \item \textbf{Minimized the allocated GPU memory
+    } - Smart allocation of GPU memory is a must in the RL setting. Naïve approach of allocating full GPU memory can lead to memory issues and low utilization. We noticed that problem early on with the Breyer et al.'s encoder implementation. The encoder was reserving half of the GPU memory and not utilizing them all. The implementation was complicated because of the disconnection between the Keras interface and Tensorflow. While the encoder uses Keras high-level interface of Tensorflow, Stable-baselines algorithms were implemented purely based on Tensorflow. Therefore, the interaction between those applications was broken. We combined them in the same Tensorflow compute graph. Thus, the encoder did not attempt to allocate GPU memory on its own but uses the same memory reserved for the Stable-baselines algorithm. This bug fix led us to utilize more GPU memory, and naturally, more experiments can be run in parallel.
+    
+    \item \textbf{Ablation studies
+    } - We conducted several ablation experiments to check the relative importance of the modules we used. These experiments cover the absence of actuator width information as observation, the lack of input and reward normalization, and the nonexistence of shaped reward function.  We suppose the results show the most critical module for the RL algorithm performing on grasping tasks.
+    
+    \item \textbf{The distinction of validation set
+    } -  Before our work, the object dataset was only divided into training and test set. The best performing model was evaluated based on the test set's performance, introducing a biased in the selection procedure.  The test set should never be touched during the training procedure. Therefore, we introduced the validation set; during training, we test the agent's performance against the validation set periodically. Through this fix, we achieved a more generalizing and robust model.
+\end{enumerate}
+
+
+
+   
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+

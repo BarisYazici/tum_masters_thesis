@@ -1,0 +1,43 @@
+% !TeX root = ../main.tex
+% Add the above to each chapter to make compiling the PDF easier in some editors.
+
+\chapter{Conclusion \& Future Work}\label{chapter:conclusion}
+
+\section{Conclusion}
+
+% See~\autoref{tab:sample}, \autoref{fig:sample-drawing}, \autoref{fig:sample-plot}, \autoref{fig:sample-listing}, \autoref{fig:tum}, \autoref{fig:tumslide}.
+
+Experiment results successfully demonstrated that the BDQ algorithm could scale to high dimensional action spaces without losing performance \cite{Tavakoli2018}. Whereas, DQN suffered from the increased action space dimension \ref{fig:BDQDQNsimp}. Apart from scaling, BDQ showed increased robustness than DQN to changing the environment. The best BDQ model achieved a 91\% success rate in the simplified environment in the table scene. This performance proves that BDQ smoothly transfers to a different scene where it was not trained. Therefore, we conclude that BDQ can generalize well to different scenes and objects. Generalization is not the case for the DQN model; its performance deteriorates in different scenes. DQN results table (\ref{tab:DQNsimpres}) shows that DQN with four pads of discretization stayed at a 1\% success rate in the table scene. In the original floor scene where the training was conducted, it achieved a 76\% success rate.
+
+We tested the BDQ algorithm with two different network sizes. The small network achieved significantly better performance than the bigger network. Smaller BDQ network with 33 action pads performed with 82\% success rate, whereas the bigger network with the same configuration showed poor performance with 29\%.
+
+Although high variance and hyperparameter sensitiveness exist, both Q-function based methods successfully converged to a decent policy for object grasping in the simplified task. On the other hand, both algorithms were incapable of learning the full environment description. We believe this is due to the naïve exploration strategy and limits of value-based methods. Maximum entropy RL inherently explores better than epsilon-greedy or Gaussian noise exploration techniques. Also, the actor-critic methods have higher success potential than value-based methods \cite{Lillicrap2016}. 
+
+Baseline SAC algorithm performed slightly better than the best BDQ model, with a 97\% success rate in the floor scene. However, we noticed an apparent decay in SAC's performance in the table scene with an 87\% success rate. Generally, SAC with depth perception performed poorly in the table scene. These results explain that BDQ can generalize better to new scenes.
+
+The most noteworthy results come from the SAC algorithm. To the best of our knowledge, the SAC algorithm surpassed all previously tested algorithms in robotics grasping the research in simulation. Our best SAC model converged to a 100\% success rate in a cluttered environment. While prior works QT-Opt, Breyer et al. only achieved 96\% and 98\% success rate \cite{Kalashnikov2018}, \cite{Quillen2018}. 
+
+SAC algorithm showed unprecedented robustness to varying scenes and objects. It successfully grasped 97\% of wooden blocks, which is an entirely different dataset than the training dataset. Moreover, it converges to its top performance only after hundred thousand timesteps, about 2-3 hours of training time \ref{fig:percep}. In contrast, Breyer et al.'s TRPO algorithm converged to its peak performance at around six million-time steps. Three main factors account for this improved performance: off-policy updates, normalization, and perception layer. 
+
+Firstly, the SAC algorithm utilizes off-policy updates for both policy and value function estimation. On the contrary, TRPO is an on-policy algorithm that only uses the current batch of experiences for actor-critic updates. Off-policy algorithms usually achieve greater data efficiency than on-policy RL algorithms.
+
+Secondly, in our experiments, we normalized both the observation and reward. Normalization largely accounts for the success of the SAC in the full environment. We found reward normalization the most vital part of our experiments, especially when the shaped reward is used. Ablation studies showed that SAC fails to learn a working grasping policy without normalization \ref{fig:nonorm}.
+
+Thirdly, Breyer et al.'s sophisticated autoencoder perception layer provides faster convergence. However, the more straightforward raw depth observation converges to a better success rate with improved robustness \ref{fig:percep}. We believe the difference between encoder and depth lies in the depth interpretation loss. Autoencoders compress the observation onto a latent-space. This compression causes the agent to misinterpret the depth of the objects. Indeed, in the failure modes section \ref{sec:fail}, we noted down the repetitive failure of grasping an object because of wrong depth interpretation. On the other hand, the depth perception layer is an online method; therefore, it corrects its network weights when a wrong interpretation occurs. The online perception layer also contributes to the end-to-end nature of the RL algorithm. Where our depth perception layer's weights are updated to deliver better-grasping policy, autoencoder's weights are immutable throughout learning.
+
+Another important take off from the ablation studies is the role of curriculum strategy and shaped reward function. We tested in the full environment both with sparse reward function and without curriculum strategy and compared it against the baseline SAC. We noticed that both curriculum and shaped reward speed up the convergence. However, the location of the converged performance does not change immensely. For instance, baseline SAC performed with a 100\% success rate on random objects dataset in the floor scene, where without curriculum and shaped reward, it performed 100\% and 99\%, respectively. We see a similar situation in the table scene, baseline converges to 95\% success rate, while without curriculum or shaped reward converge to 97\% and 100\%, respectively. These results show us that a robust algorithm with a strong perception pipeline and normalization ought to learn without additional modifications. The results also show a strong correlation with the theoretical basis of RL described in Introduction to Reinforcement Learning book from Sutton \cite{Sutton2018}. Sutton comments that reward engineering gives no gain over binary reward. Although we note down the redundancy of additional modifications, both reward engineering and curriculum learning still useful for speeding up the learning.
+
+As represented in \ref{fig:noact} without actuator width information, the grasping success rate converged to a lower point. It is essential to note the importance of actuator width observation. The agent evaluates the grasp quality through this information. If the robot cannot close its gripper or the gripper closes fully, then the agent deducts that it is probably not a good grasp. Thus we can conclude that extra observation regarding the environment increases the peak success rate of an agent.
+
+\input{chapters/future.tex}
+
+% \section{Future Work}
+
+
+% \begin{itemize}
+%     \item (Soft)Entropy maximization framework implementation of BDQ for better exploration
+%     \item Try with different perception approaches. Without autoencoder directly passing the image to CNN
+%     \item Transfering the models learned in simulation to real-world
+%     \item Learning the curriculum parameters
+%     \item Trying the agent model in different robot models
+% \end{itemize}

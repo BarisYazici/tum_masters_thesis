@@ -1,0 +1,32 @@
+\section{Stable Baselines}
+
+
+While the OpenAI gym framework identifies the environment, Stable Baselines provides the agent part of the RL framework. Stable Baselines is a robust open-source fork of OpenAI baselines. Yet it is based on OpenAI Baselines; it has surpassed the performance of OpenAI Baselines in many ways. 
+The authors of Stable Baselines have composed a Medium article\footnote{\url{https://bit.ly/3ia3GvM}} that describes every additional feature and bug fix over OpenAI baselines. In this section, we will only mention the critical components that are needed for our project.
+
+First and foremost, Stable Baselines has strong support for the state-of-art algorithm SAC. SAC proved to be the best algorithm we tested in our environment. Apart from SAC, it supports ten more algorithms\footnote{a2c, 
+acer, acktr, ddpg, dqn, gail, her, ppo, trpo, td3}. Stable Baselines maintains a sophisticated save/load structure. Since we aim to warm-start and fine-tune the neural network variables, we should save and load the network variables individually. A use-case in our application is truncating the last soft-max layer of a saved model to change the action-space size. We often encountered problems with OpenAI Baselines save/load structure.
+
+Moreover, Stable Baselines supports input and reward normalization. Later in the results section, we will show that our best performing model is equipped with both input and reward normalization.
+
+Lastly, because of the extra features, fully documented, and tested code-base, we decided to reimplement the BDQ algorithm based on Stable Baselines. Example of how to run a simple training and saving can be seen below in \ref{list:sb_bdq}
+
+
+\begin{lstlisting}[language=Python, caption=Example of training and saving BDQ algorithm on gripper-env, label=list:sb_bdq]
+    import gym
+
+    from stable_baselines.bdq.policies import MlpActPolicy
+    from stable_baselines import BDQ
+
+    env = gym.make('gripper-env-v0', config='config/gripper_grasp.yaml')
+
+    model = BDQ(MlpActPolicy, env, verbose=1)
+    model.learn(total_timesteps=10000)
+
+    obs = env.reset()
+    for i in range(1000):
+        action = model.predict(obs)
+        obs, rewards, dones, info = env.step(action)
+    
+    env.close()
+\end{lstlisting}

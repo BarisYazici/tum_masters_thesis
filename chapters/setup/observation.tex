@@ -1,0 +1,27 @@
+\section{Observation}
+
+The environment processes the observation data and serves it to the agent after each timestep. The observation here refers to the agent's state in the Markov Decision Process. We implemented three different perception pipelines: Autoencoder, raw depth, and RGBD. The autoencoder setup is the same as Breyer et al., observation consists of the encoded RGBD sensor output. We use the autoencoder's latent space to encode the large RGBD sensor output with size 64x64x3 to 100x1. We collect 18000 training images and 2000 test images on a random agent working in the simplified environment description. We slightly change the Breyer et al.'s data collection parameters to get closer image shots of the objects.
+
+We also implemented a perception layer which allows the direct computation of RGBD sensor output. This approach uses a similar perception layer setup as Mnih et al. We implemented two different types of non-encoded perception layers: RGBD sensor output with four separate channels and the depth sensor output with one channel. 
+
+Processing the raw sensor observations demands more delicate handling. Typically, we need to input the sensor output (RGBD or only depth) to the convolutional neural network. However, the inclusion of the actuator width makes the processing more complicated. We ought to add the actuator width information to the sensor output without changing the sensor output's shape. In other words, we cannot flatten the sensor output and add the one-dimensional actuator width information. We need to pad the one-dimensional actuator width information into a three-dimensional array to comply with the sensor output (64x64x1 or 64x64x4). In the environment side, we truncate the padded actuator width information into the sensor output. Therefore, the actuator width information allocates a dedicated channel at the end of the whole environment observation. 
+
+We parse the sensor output channels from the actuator width information again and input it to the agent's observation processing neural network. This neural network consists of three convolutional neural layers and a fully connected layer at the end. After processing the sensor data, we get a one-dimensional array with 512 elements, the hidden layer size of the last fully connected layer. Then, we concatenate the unpadded actuator width information to the 512 elements fully connected layer output. In the end, we squeeze the observation into a one-dimensional array with 513 elements. This resulting array will be further processed in the agent's neural network that approximates either the Q-values, policy, or both. The non-encoded observation process is explained with diagrams below \ref{fig:obsprocess}.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{1\textwidth}
+      \includegraphics[width=1\linewidth]{figures/RGBDobs}
+      \caption{RGBD output combined with gripper width. Overall shape (64,64,5)} \label{fig:rgbobs}
+    \end{subfigure}%
+    % \hspace*{\fill}   % maximize separation between the subfigures
+    \newline
+    \begin{subfigure}{1\textwidth}
+      \includegraphics[width=1\linewidth]{figures/depthobs}
+      \caption{Depth sensor output combined with gripper width. Overall shape (64,64,2)} \label{fig:depthobs}
+    \end{subfigure}%
+    % \hspace*{\fill}   % maximize separation between the subfigures
+
+
+\caption{ Non-encoded observation processing layers \label{fig:obsprocess}}
+\end{figure}

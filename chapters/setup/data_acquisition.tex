@@ -1,0 +1,6 @@
+\section{Data Acquisition}
+
+We conduct all our experiments solely in the Bullet simulation engine. RL training needs an extreme amount of data and training time. The shortest training time required for our experiments is not shorter than a day. In this respect, simulation provides a low-cost, robust, and scalable stream of data \cite{openai2019rubiks}. Although low-quality sensor measurements pose a threat to simulation-based learning techniques, domain-randomization or continuous training strategies seem to mitigate the disadvantages of simulation. Akin to our work Breyer et al. trained a table cleaning gripper, which trained solely in simulation and performed with a \(78\%\) success rate on the real robot \cite{Breyer2018}. On the other end of the spectrum, Kalashnikov et al. collected all the robot training data in four full months and 800 robot hours. They underlined the reality and quality of real-world collected data \cite{Kalashnikov2018}. 
+
+The data acquisition process can be dealt with with many different approaches. In our case, the most convenient choice was to lead the research entirely on simulation. We will explain more on the sim-to-real transfer and reality gap in the future work chapter.
+

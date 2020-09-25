@@ -1,0 +1,13 @@
+\section{Value-Based Reinforcement Learning}
+
+Approximation of action-value or state-value function methods falls into the category of Value-based RL. These methods are model-free, meaning that they use sampling to solve the optimal solution for the problem \cite{Mnih}. At the same time, they are off-policy algorithms, which makes them data efficient but high variance algorithms \cite{SpinningUp2018}. The fact that these methods only indirectly optimize the policy make them unstable during the learning phase \cite{Sutton2018}. Value function-based approaches can overestimate the selected actions from the policy, which is the typical problem with Q-learning based algorithms. 
+
+
+\subsection{DQN}
+
+DQN is the neural network extension of the Q-learning algorithm. It has shown RL can handle high dimensional nonlinear control problems. DQN optimizes Bellman error by parameterizing the action-value function. Some extensions of DQN introduced experience replay buffer to cope with the high variance problem \cite{Lin1993}. \cite{Mnih}  inputs randomly collected mini batches of experiences to the neural network consisting of multiple layers. Thanks to their neural network structure, they overcome the convergency issues.
+
+\begin{equation}
+    L(\theta) = E_{(s, a, r, s') \thicksim U(D)} \Big[\Big(r+ \gamma \max\limits_{a'}Q(s',a'; \theta^-)) - Q(s,a;\theta)\Big)^2\Big] 
+\end{equation}
+

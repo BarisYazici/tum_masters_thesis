@@ -1,0 +1,31 @@
+% !TeX root = ../main.tex
+% Add the above to each chapter to make compiling the PDF easier in some editors.
+
+\chapter{Simulator Choice}
+
+
+Simulator choice was the first important architecture decision we made because it influences the whole software architecture. Simulator lays the groundwork of the robotics environment implementation. 
+Especially for continuous control optimization tasks, accurate simulation plays a significant role in the controller's performance. As Todorov et al. indicated, if the simulation is not accurate enough, an optimization algorithm will find a way to exploit it \cite{Todorov2012}.
+We compared three states of art simulators: Mujoco\footnote{\url{http://www.mujoco.org/}}, Gazebo\footnote{\url{http://gazebosim.org/}}, and Pybullet\footnote{\url{https://pybullet.org/}}. Each simulator comes with advantages and drawbacks. Our decision is based on active support, community, stability, scalability, and ease of use. It is important to note that our analysis includes subjective factors such as ease of use, documentation coverage, and tutorials quality. Although we tried our best to ground our points on facts, subjective criteria include certain personal preferences. 
+
+\input{chapters/simulator_choice/mujoco.tex}
+
+\input{chapters/simulator_choice/gazebo.tex}
+
+\input{chapters/simulator_choice/pybullet.tex}
+
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|l|l|l|}
+    \hline
+    \textbf{Simulator}     & \textbf{Gazebo} & \textbf{MuJoCo} & \textbf{Pybullet}       \\ \hline
+    \textbf{Designed For}  & Robotics        & Robotics        & Graphics/Games/Robotics \\ \hline
+    \textbf{License}       & Open-Source     & Closed-Source   & Open-Source             \\ \hline
+    \textbf{API}           & C++/Python      & C               & Python                  \\ \hline
+    \textbf{Documentation} & 4/5             & 3/5             & 5/5                     \\ \hline
+    \textbf{Ease of Use}   & 2/5             & 3/5             & 5/5                     \\ \hline
+    \end{tabular}
+    \caption{Comparison of simulators. Finally, we decided on PyBullet}
+    \label{tab:simulation}
+\end{table}

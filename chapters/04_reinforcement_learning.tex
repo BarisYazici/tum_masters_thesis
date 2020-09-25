@@ -1,0 +1,16 @@
+\chapter{Reinforcement Learning Algorithms and Tools}\label{chapter:reinforcement_learning}
+
+In this chapter, we will dig deeper into Reinforcement Learning algorithms. How the algorithms are implemented, what are their strengths and weaknesses? We will present our state-of-art algorithm, SAC (Soft-Actor-Critic), and the algorithm we want to test on the robotics applications, BDQ (Branched-Dueling Q-learning). We will mention the fundamental differences between those two algorithms, such as their optimization objective functions and different exploration approaches. 
+
+After the introduction of algorithms, we are going to present RL environment frameworks and algorithm libraries. We base our custom robotics environment on Gym environment definition. In the same way, we intensively used an open-source RL baseline algorithm library called Stable-Baselines. For the implementation of neural networks, we imported Tensorflow and Keras. Finally, we introduce Optuna as our hyper-parameter optimization tool. 
+
+Overall we depend on many different software libraries, which we do not mention here; the interested audience can take a look at our Github page\footnote{\url{https://bit.ly/3k8uSga}}.
+
+\input{chapters/reinforcement_learn/sac.tex}
+\input{chapters/reinforcement_learn/bdq.tex}
+\input{chapters/reinforcement_learn/openaigym.tex}
+\input{chapters/reinforcement_learn/stablebaselines.tex}
+\input{chapters/reinforcement_learn/machinelearning.tex}
+\input{chapters/reinforcement_learn/optuna.tex}
+\input{chapters/reinforcement_learn/hardware.tex}
+% \input{chapters/reinforcement_learn/libraries.tex}
